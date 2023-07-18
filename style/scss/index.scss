@@ -11,20 +11,10 @@ body {
    background-color: $backgroundGray1;
 }
 
-//start header-------------------------------------------
-
-header {
-   @include box(calc(100% - 40px), $white, 4px, $shadowColor, 0);
-   margin: 0 auto;
-   padding: 5px 20px;
-   @include display(flex, center, space-between);
-   position: relative;
-}
-
+///start access list------------------------------
 .accessMenu {
    width: calc(300px - 16px);
    height: 100vh;
-   position: absolute;
    background-color: $darkLight;
    left: -220px;
    top: 0;
@@ -47,31 +37,115 @@ header {
       h3 {
          display: none;
       }
-   }
-   @for $i from 1 through 4 {
-      .subList-#{$i} {
-        visibility: hidden;
+
+      .steady-icon {
+         display: none;
+         cursor: pointer;
+         padding: 3px;
+         border-radius: 50%;
       }
    }
+
+   @for $i from 1 through 4 {
+      .subList-#{$i} {
+         visibility: hidden;
+      }
+   }
+
    &:hover {
       left: 0;
+
       .logoName {
          @include display(flex, center, space-around);
 
          h3 {
             display: block;
          }
+
+         .steady-icon {
+            display: block;
+         }
       }
+
       .mainList {
          visibility: visible;
       }
+
       @for $i from 1 through 4 {
          .subList-#{$i} {
-           visibility: visible;
+            visibility: visible;
          }
       }
    }
 
+}
+
+/// end eccess list-----------------------------------
+//when access list is steady:
+#body.steady {
+   width: calc(100% - 230px);
+   margin-left: 230px;
+}
+
+.dashboard-card.steady {
+   width: 100%;
+}
+
+.box.steady {
+   width: calc(100% - 90px);
+   margin-left: 80px;
+}
+
+.main.steady {
+   width: calc(100vw - 270px);
+}
+
+.dashboard.steady {
+   width: calc(100% - 100px);
+   margin-left: 70px;
+}
+
+.accessMenu.steady {
+   left: 0;
+
+   .logoName {
+      @include display(flex, center, space-around);
+
+      h3 {
+         display: block;
+      }
+
+      .steady-icon {
+         display: block;
+      }
+   }
+
+   .mainList {
+      visibility: visible;
+   }
+
+   @for $i from 1 through 4 {
+      .subList-#{$i} {
+         visibility: visible;
+      }
+   }
+
+
+}
+
+.steady-icon.steady {
+   transform: rotate(180deg);
+   background-color: $hoverList;
+}
+
+//start header-------------------------------------------
+
+header {
+   @include box(calc(100% - 40px), $white, 4px, $shadowColor, 0);
+   margin: 0 auto;
+   padding: 5px 20px;
+   @include display(flex, center, space-between);
+   position: relative;
 }
 
 .logo {
@@ -325,7 +399,6 @@ header {
 //end header-------------------------------------------------------
 
 //start body-------------------------------------------------------
-///start access list------------------------------
 
 
 .mainList {
@@ -485,12 +558,8 @@ header {
    }
 }
 
-
-
-
-///end access list------------------------------
-///start #main--------------------------------------
-main {
+///start .main--------------------------------------
+.main {
    width: calc(100vw - 40px);
    margin: 20px auto;
    padding: 20px 10px;
