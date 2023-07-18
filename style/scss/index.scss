@@ -1,0 +1,609 @@
+@import "variable";
+@import "mixin";
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+   background-color: $backgroundGray1;
+}
+
+//start header-------------------------------------------
+
+header {
+   @include box(calc(100% - 40px), $white, 4px, $shadowColor, 0);
+   margin: 0 auto;
+   padding: 5px 20px;
+   @include display(flex, center, space-between);
+   position: relative;
+}
+
+.accessMenu {
+   width: calc(300px - 16px);
+   height: 100vh;
+   position: absolute;
+   background-color: $darkLight;
+   left: -220px;
+   top: 0;
+   transition: all .3s ease;
+   padding: 5px 8px 8px 8px;
+   z-index: 11;
+   position: fixed;
+   overflow-y: scroll;
+   scrollbar-width: none;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
+   .logoName {
+      @include display(flex, center, flex-end);
+      color: $white;
+      margin-bottom: 25px;
+
+      h3 {
+         display: none;
+      }
+   }
+   @for $i from 1 through 4 {
+      .subList-#{$i} {
+        visibility: hidden;
+      }
+   }
+   &:hover {
+      left: 0;
+      .logoName {
+         @include display(flex, center, space-around);
+
+         h3 {
+            display: block;
+         }
+      }
+      .mainList {
+         visibility: visible;
+      }
+      @for $i from 1 through 4 {
+         .subList-#{$i} {
+           visibility: visible;
+         }
+      }
+   }
+
+}
+
+.logo {
+   background-image: url(../../image/irisaco.jpg);
+   background-size: cover;
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+}
+
+.search-box {
+   @include box(300px, $backgroundGray2, 0, $shadowColor, 8px);
+   @include display(flex, center, flex-start);
+   margin-left: 70px;
+
+   img {
+      width: 30px;
+      margin: 5px;
+   }
+
+   input {
+      border: none;
+      outline: none;
+      background-color: $backgroundGray2;
+      font-size: 15px;
+      padding: 10px;
+      width: 250px;
+   }
+}
+
+.navbarMain {
+   @include display(flex, center, none);
+   position: relative;
+
+   .navbar {
+      @include display(flex, center, none);
+   }
+}
+
+.profile {
+   @include display(flex, center, none);
+   border-left: .5px solid $line;
+   padding: 8px;
+   margin-left: 10px;
+   cursor: pointer;
+
+   h4 {
+      margin-bottom: 5px;
+   }
+}
+
+.profile-photo {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   margin-right: 8px;
+}
+
+.userMenu {
+   position: absolute;
+   top: 80px;
+   right: 0px;
+   background: #fff;
+   width: 180px;
+   border-radius: 15px;
+   display: none;
+   transition: all 0.3s ease-in-out;
+   z-index: 10;
+   box-shadow: 4px 4px 5px $shadowColor,
+      -4px -4px 5px $shadowColor;
+   padding: 15px 0px;
+
+   ul {
+      width: 100%;
+      list-style: none;
+      padding: 0 15px;
+      box-sizing: border-box;
+   }
+
+   li {
+      display: flex;
+      align-items: center;
+      padding: 10px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+
+      &:hover {
+         background-color: $backgroundGray2;
+      }
+   }
+
+   img {
+      width: 25px;
+      margin-right: 15px;
+   }
+
+   a {
+      text-decoration: none;
+      color: #000;
+   }
+}
+
+.userMenu.active {
+   display: block;
+}
+
+.userMenu::before {
+   z-index: -1;
+   content: '';
+   position: absolute;
+   top: -12px;
+   right: 30px;
+   width: 25px;
+   height: 25px;
+   background: #fff;
+   transform: rotate(45deg);
+   box-shadow: -4px -4px 5px $shadowColor;
+}
+
+.navbar-left {
+   img {
+      width: 30px;
+   }
+
+   #circled3 {
+      position: absolute;
+      width: 25px;
+      top: -6px;
+      right: -4px;
+   }
+
+   .notife-icon {
+      position: relative;
+      margin-left: 10px;
+      @include display(flex, center, center);
+      padding: 5px;
+      border-radius: 50%;
+   }
+
+   .home-icon {
+      @include display(flex, center, center);
+      padding: 5px;
+      border-radius: 50%;
+      margin-left: 10px;
+   }
+
+   .star-icon {
+      @include display(flex, center, center);
+      padding: 5px;
+      border-radius: 50%;
+   }
+}
+
+.notifeMenu {
+   position: absolute;
+   top: 80px;
+   right: 210px;
+   background: #fff;
+   width: 300px;
+   border-radius: 15px;
+   display: none;
+   transition: all 0.3s ease-in-out;
+   z-index: 10;
+   box-shadow: 4px 4px 5px $shadowColor,
+      -4px -4px 5px $shadowColor;
+   padding: 5px 0px;
+
+   .notifeHeader {
+      text-align: center;
+      border-bottom: .5px solid $hoverList;
+      padding: 8px 0 13px 0;
+   }
+
+   .notifeFooter {
+      padding: 8px 0 3px 0;
+      border-top: .5px solid $hoverList;
+      text-align: center;
+
+      >button {
+         width: 280px;
+         padding: 8px;
+         border-radius: 12px;
+         background-color: $linearBlueBottom;
+         border: none;
+         color: $white;
+         font-size: 18px;
+         cursor: pointer;
+      }
+   }
+}
+
+.notifeBody {
+   height: 250px;
+
+   >ul {
+      list-style: none;
+      height: 250px;
+      overflow-y: scroll;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
+   }
+
+   li>a {
+      border-bottom: .3px solid $backgroundGray2;
+      padding: 8px;
+      @include display(flex, center, flex-start);
+      text-decoration: none;
+      color: $fontGary;
+
+      div>div {
+         @include display(flex, center, space-between);
+         margin-bottom: 8px;
+
+         h5 {
+            color: $black;
+         }
+      }
+   }
+
+   li {
+      &:hover {
+         background-color: $backgroundGray2;
+      }
+   }
+
+   .notifeTime {
+      margin-left: 35px;
+   }
+}
+
+.notifeMenu.active {
+   display: block;
+}
+
+.notifeMenu::before {
+   z-index: -1;
+   content: '';
+   position: absolute;
+   top: -12px;
+   right: 30px;
+   width: 25px;
+   height: 25px;
+   background: #fff;
+   transform: rotate(45deg);
+   box-shadow: -4px -4px 5px $shadowColor;
+}
+
+//end header-------------------------------------------------------
+
+//start body-------------------------------------------------------
+///start access list------------------------------
+
+
+.mainList {
+   list-style: none;
+   color: $fontGary;
+   visibility: hidden;
+
+   @for $item from 1 through 3 {
+
+      .listTitr-#{$item} {
+         cursor: pointer;
+         display: flex;
+         margin-top: 12px;
+         align-items: center;
+
+         &:hover {
+            color: $white;
+         }
+      }
+
+      @for $j from 1 through 4 {
+         .list-insideTitr-#{$item}-#{$j} {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+               color: $white;
+            }
+         }
+      }
+   }
+}
+
+.mainList.active {
+   display: none;
+}
+
+@for $item from 1 through 3 {
+   #arrow-left-#{$item} {
+      width: 25px;
+      margin-left: 5px;
+      transition: all .3s ease;
+   }
+
+   #arrow-left-#{$item}.active {
+      transform: rotate(90deg);
+   }
+
+   .list-#{$item} {
+      list-style: none;
+      padding: 10px 15px 1px 25px;
+      border-radius: 12px;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: all .3s ease;
+
+
+      >li {
+         margin-bottom: 10px;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         >div {
+            &:hover {
+               color: $white;
+            }
+         }
+      }
+   }
+
+   .list-#{$item}.active {
+      opacity: 1;
+      height: auto;
+   }
+
+   @for $i from 1 through 5 {
+      .list-#{$item}-star-#{$i} {
+         width: 20px;
+      }
+   }
+}
+
+@for $i from 1 through 4 {
+   .subList-#{$i} {
+      display: none;
+      list-style: none;
+      color: $fontGary;
+      padding-right: 20px;
+
+      .back {
+         @include display(flex, center, flex-start);
+         margin-left: 5px;
+         margin-bottom: 5px;
+         cursor: pointer;
+         background-color: $hoverList;
+         padding: 5px;
+         border-radius: 10px;
+
+         &:hover {
+            color: $white;
+         }
+
+         img {
+            width: 25px;
+            margin-right: 8px;
+         }
+      }
+
+      span {
+         font-size: 20px;
+         color: $white;
+         display: inline-block;
+         margin-bottom: 10px;
+         margin-left: 8px;
+      }
+
+      >li {
+         margin-left: 15px;
+         margin-bottom: 8px;
+         cursor: pointer;
+         @include display(flex, center, space-between);
+
+         &:hover {
+            color: $white;
+         }
+      }
+
+      @for $item from 1 through 2 {
+
+         .listTitr-#{$item} {
+            cursor: pointer;
+            @include display(flex, center, flex-start);
+
+            &:hover {
+               color: $white;
+            }
+         }
+
+         @for $j from 1 through 4 {
+            .list-insideTitr-#{$item}-#{$j} {
+               display: flex;
+               align-items: center;
+
+               &:hover {
+                  color: $white;
+               }
+            }
+         }
+      }
+   }
+
+   .subList-#{$i}.active {
+      display: block;
+   }
+}
+
+
+
+
+///end access list------------------------------
+///start #main--------------------------------------
+main {
+   width: calc(100vw - 40px);
+   margin: 20px auto;
+   padding: 20px 10px;
+   @include display(flex, center, center);
+   flex-direction: column;
+}
+
+.dashboard {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 20px;
+   margin-bottom: 20px;
+}
+
+.dashboard1 {
+   background: linear-gradient(to left, $linearBlueTop, $linearBlueBottom);
+}
+
+.dashboard2 {
+   background: linear-gradient(to left, $linearOrangeTop, $linearOrangeBottom);
+}
+
+.dashboard3 {
+   background: linear-gradient(to left, $linearRedTop, $linearRedBottom);
+}
+
+.dashboard4 {
+   background: linear-gradient(to left, $linearGreenTop, $linearGreenBottom);
+}
+
+.dashboard-card {
+   @include box(270px, $linearBlueBottom, 4px, $shadowColor, 12px);
+   height: 130px;
+}
+
+.box {
+   @include box(1100px, $white, 0px, $shadowColor, 12px);
+   height: fit-content;
+   margin-bottom: 20px;
+   position: relative;
+   box-shadow: -4px -4px 8px $shadowColor,
+      4px 4px 8px $shadowColor;
+}
+
+.message-box,
+.recently-box {
+   @include display(flex, center, space-between);
+   border-bottom: 0.3px solid $hoverList;
+   padding: 5px 15px;
+
+   img {
+      cursor: pointer;
+   }
+}
+
+.box-options-1,
+.box-options-2 {
+   display: none;
+   position: absolute;
+   @include box(170px, $white, 4px, $shadowColor, 12px);
+   border: 0.8px solid $backgroundGray2;
+   height: fit-content;
+   right: 30px;
+   top: 30px;
+   padding: 6px;
+
+   ul {
+      list-style: none;
+   }
+
+   li {
+      margin-bottom: 5px;
+      padding: 6px;
+      border-radius: 8px;
+
+      &:hover {
+         background-color: $backgroundGray2;
+      }
+   }
+}
+
+.box-options-1.active {
+   display: block;
+}
+
+.box-options-2.active {
+   display: block;
+}
+
+table {
+   width: calc(100% - 20px);
+   margin: 20px 10px;
+   border-collapse: collapse;
+   overflow: hidden;
+   border-radius: 10px;
+   font-size: 15px;
+
+   .table-header {
+      background-color: $darkLight;
+      color: $white;
+   }
+
+   tr {
+      padding: 5px;
+   }
+
+   tr:nth-child(even) {
+      background-color: $backgroundGray2;
+   }
+
+   th,
+   td {
+      text-align: left;
+      padding: 8px;
+   }
+}
