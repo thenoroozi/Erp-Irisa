@@ -89,3 +89,26 @@ function openBoxOption(event) {
    console.log(boxOption);
    boxOption.classList.toggle('active');
 }
+//when access list become steady
+function steadyAccessList() {
+   const body=document.querySelector('#body');
+   const dashboardCard=document.querySelectorAll('.dashboard-card');
+   const box=document.querySelectorAll('.box');
+   const main=document.querySelector('.main');
+   const dashboard=document.querySelector('.dashboard');
+   const accessMenu=document.querySelector('.accessMenu');
+   const steadyIcon=document.querySelector('.steady-icon');
+
+   body.classList.toggle('steady');
+   for (let i = 0; i < dashboardCard.length; i++) {
+      dashboardCard[i].classList.toggle('steady');
+      
+   }
+   for (let i = 0; i < box.length; i++) {
+      box[i].classList.toggle('steady');
+   }
+   main.classList.toggle('steady');
+   dashboard.classList.toggle('steady');
+   accessMenu.classList.toggle('steady');
+   steadyIcon.classList.toggle('steady');
+}
