@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#container {
+  background-image: url(../../image/background\ sign\ in.jpg);
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-div {
+  width: 350px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.3294117647);
+  backdrop-filter: blur(15px);
+  padding: 35px;
+  border-radius: 30px;
+}
+
+.logo {
+  background: url(../../image/irisaco.jpg);
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px #000000;
+}
+
+.title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 23px;
+  padding-top: 20px;
+}
+
+.fields {
+  width: 100%;
+  padding: 30px 5px 5px 5px;
+}
+
+.fields input {
+  outline: none;
+  border: none;
+  background-color: #ffffff;
+  font-size: 18px;
+  padding: 15px 10px 15px 10px;
+}
+
+.username,
+.password {
+  background-color: #ffffff;
+  margin-bottom: 0px;
+  border-radius: 25px;
+}
+
+.png-icon {
+  height: 22px;
+  margin: 0px 10px -5px 25px;
+}
+
+.link {
+  text-align: center;
+  margin: 15px;
+}
+
+.link a {
+  text-decoration: none;
+  color: #e7e7e7;
+  font-size: 15px;
+}
+
+.username-msg,
+.password-msg,
+.accessbility-msg {
+  color: #ec1111;
+  display: inline-block;
+  font-weight: bold;
+  height: 25px;
+  margin: 2px auto;
+}
+
+.accessbility {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.accessbility label {
+  font-size: 20px;
+  color: #ffffff;
+}
+.accessbility #accessbility {
+  width: 150px;
+  padding: 8px;
+  border-radius: 15px;
+  border: none;
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button {
+  border: none;
+  cursor: pointer;
+  width: 170px;
+  height: 45px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.cancel {
+  background: none;
+  border: 3px solid #000000;
+  color: #02db64;
+}
+.cancel:hover {
+  border: none;
+  background-color: #02db64;
+  color: #000;
+}
+
+.login {
+  background-color: #02db64;
+}
+
+/*# sourceMappingURL=signin.css.map */
