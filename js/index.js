@@ -48,10 +48,10 @@ function ChangeStar(list, num) {
    const star = document.querySelector(".list-" + list + "-star-" + num);
    if (star.src.indexOf('starOff.png') != -1) {
       star.src = './image/icon/starLight.png';
-      console.log(star);
+
    } else {
       star.src = './image/icon/starOff.png';
-      console.log(star);
+
    }
 }
 
@@ -170,4 +170,11 @@ function changeSelect() {
          tr[i].checked = false;
       }
    }
+}
+///open home
+function openHome() {
+   const main = document.querySelector('.main');
+   const functions = document.querySelector('.functions');
+   main.style.display = "flex";
+   functions.style.display = "none";
 }
