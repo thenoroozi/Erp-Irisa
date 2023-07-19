@@ -88,7 +88,7 @@ body {
 }
 
 .dashboard-card.steady {
-   width: 100%;
+   width: calc(100% - 30px);
 }
 
 .box.steady {
@@ -580,6 +580,7 @@ header {
 
 .dashboard1 {
    background: linear-gradient(to left, $linearBlueTop, $linearBlueBottom);
+   color:$white ;
 }
 
 .dashboard2 {
@@ -588,15 +589,26 @@ header {
 
 .dashboard3 {
    background: linear-gradient(to left, $linearRedTop, $linearRedBottom);
+   color:$white ;
 }
 
 .dashboard4 {
    background: linear-gradient(to left, $linearGreenTop, $linearGreenBottom);
+   color: $white;
 }
 
 .dashboard-card {
-   @include box(270px, $linearBlueBottom, 4px, $shadowColor, 12px);
+   @include box(240px, $linearBlueBottom, 4px, $shadowColor, 12px);
    height: 130px;
+   @include display(flex,flex-start,center);
+   flex-direction: column;
+   padding: 0 15px;
+   span{
+      margin-bottom: 8px;
+   }
+   h3{
+      margin-bottom: 8px;
+   }
 }
 
 .box {
