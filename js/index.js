@@ -115,15 +115,17 @@ function steadyAccessList() {
    functions.classList.toggle('steady');
 }
 //building the function lists table
-function openFunctionList() {
+function openFunctionList(event) {
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
    let tBody = document.querySelector('.functions-tbody');
    main.style.display = "none";
    functions.style.display = "flex";
+   tHeader.innerHTML="";
+   tBody.innerHTML="";
 
-   fetch('https://jsonplaceholder.typicode.com/users')
+   fetch(`https://jsonplaceholder.typicode.com/${event}/`)
       .then(response => response.json())
       .then(json => {
          let Keys = [];
@@ -148,10 +150,7 @@ function openFunctionList() {
             }
             trBody.innerHTML = tableBodyTr;
             tBody.append(trBody);
-            console.log(tBody.innerHTML);
          }
-         console.log(tHeader.innerHTML);
-         console.log(tBody.innerHTML);
 
       })
 }
