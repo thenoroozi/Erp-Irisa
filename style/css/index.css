@@ -207,6 +207,7 @@ header {
   padding: 8px;
   margin-left: 10px;
   cursor: pointer;
+  width: 190px;
 }
 .profile h4 {
   margin-bottom: 5px;
@@ -311,7 +312,7 @@ header {
 .notifeMenu {
   position: absolute;
   top: 80px;
-  right: 210px;
+  right: 195px;
   background: #fff;
   width: 300px;
   border-radius: 15px;
@@ -364,6 +365,7 @@ header {
   color: #878787;
 }
 .notifeBody li > a div > div {
+  width: 220px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -376,7 +378,7 @@ header {
   background-color: #EFEFEF;
 }
 .notifeBody .notifeTime {
-  margin-left: 35px;
+  margin-right: 5px;
 }
 
 .notifeMenu.active {
