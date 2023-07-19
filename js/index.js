@@ -73,7 +73,7 @@ function openNextPage(event) {
    subList.classList.add('active');
 }
 
-function back(event1,page) {
+function back(event1, page) {
    let subList = document.querySelector(".subList-" + event1);
    console.log(subList);
    if (page == 1) {
@@ -91,18 +91,19 @@ function openBoxOption(event) {
 }
 //when access list become steady
 function steadyAccessList() {
-   const body=document.querySelector('#body');
-   const dashboardCard=document.querySelectorAll('.dashboard-card');
-   const box=document.querySelectorAll('.box');
-   const main=document.querySelector('.main');
-   const dashboard=document.querySelector('.dashboard');
-   const accessMenu=document.querySelector('.accessMenu');
-   const steadyIcon=document.querySelector('.steady-icon');
+   const body = document.querySelector('#body');
+   const dashboardCard = document.querySelectorAll('.dashboard-card');
+   const box = document.querySelectorAll('.box');
+   const main = document.querySelector('.main');
+   const functions = document.querySelector('.functions');
+   const dashboard = document.querySelector('.dashboard');
+   const accessMenu = document.querySelector('.accessMenu');
+   const steadyIcon = document.querySelector('.steady-icon');
 
    body.classList.toggle('steady');
    for (let i = 0; i < dashboardCard.length; i++) {
       dashboardCard[i].classList.toggle('steady');
-      
+
    }
    for (let i = 0; i < box.length; i++) {
       box[i].classList.toggle('steady');
@@ -111,4 +112,63 @@ function steadyAccessList() {
    dashboard.classList.toggle('steady');
    accessMenu.classList.toggle('steady');
    steadyIcon.classList.toggle('steady');
+   functions.classList.toggle('steady');
+}
+//building the function lists table
+function openFunctionList() {
+   const main = document.querySelector('.main');
+   const functions = document.querySelector('.functions');
+   let tHeader = document.querySelector('.theader');
+   let tBody = document.querySelector('.functions-tbody');
+   main.style.display = "none";
+   functions.style.display = "flex";
+
+   fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json => {
+         let Keys = [];
+         for (const x in json[0]) {
+            Keys.push(x);
+         }
+         //table header
+         let tableHeaderTr = `<td>select</td>`;
+         let trHead = document.createElement("tr");
+         for (let i = 1; i < Keys.length; i++) {
+            tableHeaderTr += `<td>${Keys[i]}</td>`;
+         }
+         trHead.innerHTML = tableHeaderTr;
+         tHeader.appendChild(trHead);
+         //table body
+         for (let j = 0; j < json.length; j++) {
+            let trBody = document.createElement("tr");
+            trBody.innerHTML = ``;
+            let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
+            for (let i = 1; i < Keys.length; i++) {
+               tableBodyTr += `<td>${json[j][Keys[i]]}</td>`;
+            }
+            trBody.innerHTML = tableBodyTr;
+            tBody.append(trBody);
+            console.log(tBody.innerHTML);
+         }
+         console.log(tHeader.innerHTML);
+         console.log(tBody.innerHTML);
+
+      })
+}
+//select items in table
+function changeSelect() {
+   const selectAll = document.querySelector(".select-btn").childNodes[0];
+   const tr = document.getElementsByName("checkbox");
+
+   if (selectAll.src.indexOf("select-none-30.png") != -1) {
+      document.querySelector(".select-btn").childNodes[0].src = './image/icon/select-30.png';
+      for (let i = 0; i < tr.length; i++) {
+         tr[i].checked = true;
+      }
+   } else {
+      document.querySelector(".select-btn").childNodes[0].src = './image/icon/select-none-30.png';
+      for (let i = 0; i < tr.length; i++) {
+         tr[i].checked = false;
+      }
+   }
 }
