@@ -211,11 +211,12 @@
 
          <div class="navbarMain">
             <div class="navbar navbar-left">
-               <a class="star-icon" onmouseover="hoverIcon(1)" onmouseleave="leaveIcon()" href="#">
+               <a class="star-icon" onclick="ToggleMenu(3)" onmouseover="hoverIcon(1)" onmouseleave="leaveIcon()"
+                  href="#">
                   <img src="./image/icon/starOff.png">
                </a>
 
-               <a class="home-icon" onmouseover="hoverIcon(2)" onmouseleave="leaveIcon()" onclick="openHome()" href="#">
+               <a class="home-icon" onclick="openHome()" onmouseover="hoverIcon(2)" onmouseleave="leaveIcon()" href="#">
                   <img id="notife-img" src="./image/icon/home-24.png" alt="home">
                </a>
 
@@ -224,6 +225,45 @@
                   <img src="./image/icon/notification.png" alt="notification">
                   <img id="circled3" src="./image/icon/circled-3-red.png">
                </a>
+            </div>
+            <div class="favoriteMenu">
+               <div class="favoriteHeader">
+                  <h4>Favorites</h4>
+               </div>
+
+               <div class="favoriteBody">
+                  <ul>
+                     <li>
+                        <a href="#">
+                           <img class="favorite-icon" src="./image/icon/list-black.png">
+                           <h4>Disturbution List</h4>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <img class="favorite-icon" src="./image/icon/list-black.png">
+                           <h4>History</h4>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <img class="favorite-icon" src="./image/icon/list-black.png">
+                           <h4>Schedule</h4>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="#">
+                           <img class="favorite-icon" src="./image/icon/list-black.png">
+                           <h4>Check</h4>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+
+               <div class="favoriteFooter">
+                  <button>See All</button>
+               </div>
+
             </div>
 
             <div class="notifeMenu">
@@ -335,15 +375,15 @@
             </div>
 
             <div class="dashboard-card dashboard3">
-              <span>Bounce Rate</span>
-              <h3>26.4 %</h3> 
-              <span>-4.1% from last week</span> 
+               <span>Bounce Rate</span>
+               <h3>26.4 %</h3>
+               <span>-4.1% from last week</span>
             </div>
 
             <div class="dashboard-card dashboard4">
-                <span>Total Customers</span>
-                <h3>3.6K</h3>
-                <span>+3.2% from last week</span>
+               <span>Total Customers</span>
+               <h3>3.6K</h3>
+               <span>+3.2% from last week</span>
             </div>
 
          </div>
@@ -450,7 +490,8 @@
          </div>
 
          <div class="box functions-box">
-            <div class="direct-show">Alert manager <img id="direct-show-icon" src="./image/icon/arrow-right.png"> Users</div>
+            <div class="direct-show">Alert manager <img id="direct-show-icon" src="./image/icon/arrow-right.png"> Users
+            </div>
             <div class="tableHead">
                <button class="select-btn" onclick="changeSelect()"><img src="./image/icon/select-none-30.png"></button>
                <div class="findPage">
@@ -466,7 +507,7 @@
 
                </thead>
                <tbody class="tbody functions-tbody">
-                     
+
                </tbody>
             </table>
          </div>
