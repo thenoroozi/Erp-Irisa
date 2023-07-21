@@ -33,13 +33,17 @@ function leaveIcon() {
 //Toggle menu
 const toggleUserMenu = document.querySelector('.userMenu');
 const toggleNotifeMenu = document.querySelector('.notifeMenu');
+const toggleFavoriteMenu = document.querySelector('.favoriteMenu')
 
 function ToggleMenu(event) {
    if (event == 1) {
       toggleNotifeMenu.classList.toggle('active');
+      toggleFavoriteMenu.classList.remove('active');
    } else if (event == 2) {
-
       toggleUserMenu.classList.toggle('active');
+   }else if(event==3){
+      toggleFavoriteMenu.classList.toggle('active');
+      toggleNotifeMenu.classList.remove('active');
    }
 }
 
@@ -122,8 +126,8 @@ function openFunctionList(event) {
    let tBody = document.querySelector('.functions-tbody');
    main.style.display = "none";
    functions.style.display = "flex";
-   tHeader.innerHTML="";
-   tBody.innerHTML="";
+   tHeader.innerHTML = "";
+   tBody.innerHTML = "";
 
    fetch(`https://jsonplaceholder.typicode.com/${event}/`)
       .then(response => response.json())
