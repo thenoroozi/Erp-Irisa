@@ -406,10 +406,13 @@ header {
 .mainList .listTitr-1 {
   cursor: pointer;
   display: flex;
-  margin-top: 12px;
+  margin-top: 5px;
   align-items: center;
+  padding: 8px;
+  border-radius: 8px;
 }
 .mainList .listTitr-1:hover {
+  background-color: #2F3436;
   color: #fff;
 }
 .mainList .list-insideTitr-1-1 {
@@ -443,10 +446,13 @@ header {
 .mainList .listTitr-2 {
   cursor: pointer;
   display: flex;
-  margin-top: 12px;
+  margin-top: 5px;
   align-items: center;
+  padding: 8px;
+  border-radius: 8px;
 }
 .mainList .listTitr-2:hover {
+  background-color: #2F3436;
   color: #fff;
 }
 .mainList .list-insideTitr-2-1 {
@@ -480,10 +486,13 @@ header {
 .mainList .listTitr-3 {
   cursor: pointer;
   display: flex;
-  margin-top: 12px;
+  margin-top: 5px;
   align-items: center;
+  padding: 8px;
+  border-radius: 8px;
 }
 .mainList .listTitr-3:hover {
+  background-color: #2F3436;
   color: #fff;
 }
 .mainList .list-insideTitr-3-1 {
@@ -545,7 +554,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.list-1 > li > div:hover {
+.list-1 > li:hover {
   color: #fff;
 }
 
@@ -600,7 +609,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.list-2 > li > div:hover {
+.list-2 > li:hover {
   color: #fff;
 }
 
@@ -655,7 +664,7 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.list-3 > li > div:hover {
+.list-3 > li:hover {
   color: #fff;
 }
 

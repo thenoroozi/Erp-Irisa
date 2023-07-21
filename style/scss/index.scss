@@ -417,10 +417,12 @@ header {
       .listTitr-#{$item} {
          cursor: pointer;
          display: flex;
-         margin-top: 12px;
+         margin-top: 5px;
          align-items: center;
-
+         padding: 8px;
+         border-radius: 8px;
          &:hover {
+            background-color: $hoverList;
             color: $white;
          }
       }
@@ -470,10 +472,8 @@ header {
          align-items: center;
          justify-content: space-between;
 
-         >div {
-            &:hover {
-               color: $white;
-            }
+         &:hover {
+            color: $white;
          }
       }
    }
