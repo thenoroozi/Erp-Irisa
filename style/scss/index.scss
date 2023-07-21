@@ -748,6 +748,7 @@ table {
 
 .direct-show {
    @include display(flex, center, flex-start);
+   margin-bottom: 10px;
 }
 
 .direct-show-icon {
@@ -813,7 +814,7 @@ table {
 .tableHead {
    @include display(flex, center, space-between);
    width: 100%;
-   margin: 10px auto;
+   margin: 0px auto;
 }
 
 .findPage {
