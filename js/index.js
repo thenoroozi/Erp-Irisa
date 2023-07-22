@@ -103,6 +103,7 @@ function steadyAccessList() {
    const dashboard = document.querySelector('.dashboard');
    const accessMenu = document.querySelector('.accessMenu');
    const steadyIcon = document.querySelector('.steady-icon');
+   const accessListTopic=document.querySelector('.accessList-topic');
 
    body.classList.toggle('steady');
    for (let i = 0; i < dashboardCard.length; i++) {
@@ -117,6 +118,7 @@ function steadyAccessList() {
    accessMenu.classList.toggle('steady');
    steadyIcon.classList.toggle('steady');
    functions.classList.toggle('steady');
+   accessListTopic.classList.toggle('steady');
 }
 //building the function lists table
 function openFunctionList(event) {
