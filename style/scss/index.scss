@@ -133,6 +133,165 @@ body {
    }
 }
 
+
+.mainList {
+   list-style: none;
+   color: $fontGary;
+   visibility: hidden;
+
+   @for $item from 1 through 3 {
+
+      .listTitr-#{$item} {
+         cursor: pointer;
+         display: flex;
+         margin-top: 5px;
+         align-items: center;
+         padding: 8px;
+         border-radius: 8px;
+
+         &:hover {
+            background-color: $hoverList;
+            color: $white;
+         }
+      }
+
+      @for $j from 1 through 4 {
+         .list-insideTitr-#{$item}-#{$j} {
+            display: flex;
+            align-items: center;
+
+            &:hover {
+               color: $white;
+            }
+         }
+      }
+   }
+}
+
+.mainList.active {
+   display: none;
+}
+
+@for $item from 1 through 3 {
+   #arrow-left-#{$item} {
+      width: 25px;
+      margin-left: 5px;
+      transition: all .3s ease;
+   }
+
+   #arrow-left-#{$item}.active {
+      transform: rotate(90deg);
+   }
+
+   .list-#{$item} {
+      list-style: none;
+      padding: 10px 15px 1px 25px;
+      border-radius: 12px;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition: all .3s ease;
+
+
+      >li {
+         margin-bottom: 10px;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+
+         &:hover {
+            color: $white;
+         }
+      }
+   }
+
+   .list-#{$item}.active {
+      opacity: 1;
+      height: auto;
+   }
+
+   @for $i from 1 through 5 {
+      .list-#{$item}-star-#{$i} {
+         width: 20px;
+      }
+   }
+}
+
+@for $i from 1 through 4 {
+   .subList-#{$i}{
+      display: none;
+      list-style: none;
+      color: $fontGary;
+      padding-right: 20px;
+       margin-top: 5px;
+      .back {
+         @include display(flex, center, flex-start);
+         margin-left: 5px;
+         margin-bottom: 5px;
+         cursor: pointer;
+         padding: 5px;
+         @include box(100%,$hoverList,0,$shadowColor,10px);
+
+         &:hover {
+            color: $white;
+         }
+
+         img {
+            width: 25px;
+            margin-right: 8px;
+         }
+      }
+
+      span {
+         font-size: 20px;
+         color: $white;
+         display: inline-block;
+         margin-bottom: 10px;
+         margin-left: 8px;
+      }
+
+      >li {
+         margin-left: 15px;
+         margin-bottom: 8px;
+         cursor: pointer;
+         @include display(flex, center, space-between);
+
+         &:hover {
+            color: $white;
+         }
+      }
+
+      @for $item from 1 through 2 {
+
+         .listTitr-#{$item} {
+            cursor: pointer;
+            @include display(flex, center, flex-start);
+
+            &:hover {
+               color: $white;
+            }
+         }
+
+         @for $j from 1 through 4 {
+            .list-insideTitr-#{$item}-#{$j} {
+               display: flex;
+               align-items: center;
+
+               &:hover {
+                  color: $white;
+               }
+            }
+         }
+      }
+   }
+
+   .subList-#{$i}.active {
+      display: block;
+   }
+}
+
+
 /// end eccess list-----------------------------------
 //when access list is steady:
 #body.steady {
@@ -554,166 +713,6 @@ header {
 //end header-------------------------------------------------------
 
 //start body-------------------------------------------------------
-
-
-.mainList {
-   list-style: none;
-   color: $fontGary;
-   visibility: hidden;
-
-   @for $item from 1 through 3 {
-
-      .listTitr-#{$item} {
-         cursor: pointer;
-         display: flex;
-         margin-top: 5px;
-         align-items: center;
-         padding: 8px;
-         border-radius: 8px;
-
-         &:hover {
-            background-color: $hoverList;
-            color: $white;
-         }
-      }
-
-      @for $j from 1 through 4 {
-         .list-insideTitr-#{$item}-#{$j} {
-            display: flex;
-            align-items: center;
-
-            &:hover {
-               color: $white;
-            }
-         }
-      }
-   }
-}
-
-.mainList.active {
-   display: none;
-}
-
-@for $item from 1 through 3 {
-   #arrow-left-#{$item} {
-      width: 25px;
-      margin-left: 5px;
-      transition: all .3s ease;
-   }
-
-   #arrow-left-#{$item}.active {
-      transform: rotate(90deg);
-   }
-
-   .list-#{$item} {
-      list-style: none;
-      padding: 10px 15px 1px 25px;
-      border-radius: 12px;
-      opacity: 0;
-      height: 0;
-      overflow: hidden;
-      transition: all .3s ease;
-
-
-      >li {
-         margin-bottom: 10px;
-         cursor: pointer;
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-
-         &:hover {
-            color: $white;
-         }
-      }
-   }
-
-   .list-#{$item}.active {
-      opacity: 1;
-      height: auto;
-   }
-
-   @for $i from 1 through 5 {
-      .list-#{$item}-star-#{$i} {
-         width: 20px;
-      }
-   }
-}
-
-@for $i from 1 through 4 {
-   .subList-#{$i} {
-      display: none;
-      list-style: none;
-      color: $fontGary;
-      padding-right: 20px;
-
-      .back {
-         @include display(flex, center, flex-start);
-         margin-left: 5px;
-         margin-bottom: 5px;
-         cursor: pointer;
-         background-color: $hoverList;
-         padding: 5px;
-         border-radius: 10px;
-
-         &:hover {
-            color: $white;
-         }
-
-         img {
-            width: 25px;
-            margin-right: 8px;
-         }
-      }
-
-      span {
-         font-size: 20px;
-         color: $white;
-         display: inline-block;
-         margin-bottom: 10px;
-         margin-left: 8px;
-      }
-
-      >li {
-         margin-left: 15px;
-         margin-bottom: 8px;
-         cursor: pointer;
-         @include display(flex, center, space-between);
-
-         &:hover {
-            color: $white;
-         }
-      }
-
-      @for $item from 1 through 2 {
-
-         .listTitr-#{$item} {
-            cursor: pointer;
-            @include display(flex, center, flex-start);
-
-            &:hover {
-               color: $white;
-            }
-         }
-
-         @for $j from 1 through 4 {
-            .list-insideTitr-#{$item}-#{$j} {
-               display: flex;
-               align-items: center;
-
-               &:hover {
-                  color: $white;
-               }
-            }
-         }
-      }
-   }
-
-   .subList-#{$i}.active {
-      display: block;
-   }
-}
-
 ///start .main--------------------------------------
 .main {
    width: calc(100vw - 40px);
@@ -809,8 +808,7 @@ header {
    }
 }
 
-.box-options-1,
-.box-options-2 {
+.box-options-1, .box-options-2 {
    display: none;
    position: absolute;
    @include box(170px, $white, 4px, $shadowColor, 12px);

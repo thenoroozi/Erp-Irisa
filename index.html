@@ -5,6 +5,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./style/css/index.css">
+   <link rel="stylesheet" href="./style/css/dhtmlxgantt.css">
    <title>Irisa E-business</title>
 </head>
 
@@ -24,7 +25,7 @@
             <span class="tooltip">Personalize</span>
          </a>
       </div>
-
+      <!-- the first list -->
       <ul class="mainList">
          <li class="listTitr-1" onclick="openList(1)">
             <img id="arrow-left-1" src="./image/icon/arrow-right-white.png">
@@ -136,7 +137,7 @@
             </li>
          </ul>
       </ul>
-
+      <!-- second pages -->
       <ul class="subList-1">
          <div class="back" onclick="back(1,1)">
             <img src="./image/icon/arrow-left-white.png">
@@ -205,7 +206,22 @@
             <h4>Requests</h4>
          </li>
       </ul>
-      
+      <!-- third pages -->
+
+      <!-- <ul class="subList-5">
+         <div class="back" onclick="back(5,1)">
+            <img src="./image/icon/arrow-left-white.png">
+            <h3>Back</h3>
+         </div>
+         <span>Requests</span>
+
+         <li>
+            <div>Run</div>
+         </li>
+         <li>
+            <div>Set</div>
+         </li>
+      </ul> -->
    </div>
 
 
@@ -521,11 +537,85 @@
          </div>
       </div>
 
+      <div class="functions-item" style="display: none;">
+         <div class="box">
+            <div class="functions-item-mainMenu">
+               <ul>
+                  <li><a href="#">Project</a></li>
+                  <li><a href="#">Resources</a></li>
+                  <li><a href="#">Workplan</a></li>
+                  <li><a href="#">Control</a></li>
+                  <li><a href="#">Financial</a></li>
+                  <li><a href="#">Reporting</a></li>
+                  <li><a href="#">Procurement</a></li>
+               </ul>
+            </div>
+            <ul class="functions-item-subMenu" >
+               <li><a href="#">Tasks</a></li>
+               <li><a href="#">Deliverables</a></li>
+               <li><a href="#">Resources</a></li>
+               <li><a href="#">Setup</a></li>
+            </ul>
+
+            <div class="functions-item-part-1">
+               <div class="functions-item-parts-option">
+                  <label for="Display">Display </label>
+                  <select name="Display" id="Display">
+                     <option value="Hierarchy">Hierarchy</option>
+                     <option value="List">List</option>
+                     <option value="Gantt">Gantt</option>
+                  </select>
+                  <button class="functions-item-parts-option-button">Go</button>
+               </div>
+
+               <div class="functions-item-parts-option">
+                  <label for="Action">Action </label>
+                  <select name="Action" id="Action">
+                     <option value="1">Maintain versions</option>
+                     <option value="2">Mass update progress</option>
+                     <option value="3">Printable page</option>
+                     <option value="4">Update current working version</option>
+                     <option value="5">View workplan cost</option>
+                  </select>
+                  <button class="functions-item-parts-option-button">Go</button>
+               </div>
+            </div>
+
+            <div class="functions-item-part-2">
+               <button>Export</button>
+
+               <div class="functions-item-parts-option">
+                  <label for="View">View </label>
+                  <select name="View" id="View">
+                     <option value="1">All tasks</option>
+                     <option value="2">Critical tasks</option>
+                     <option value="3">Milestones</option>
+                     <option value="4">Phases</option>
+                     <option value="5">Tasks Estimated to finish late</option>
+                     <option value="6">Tasks schedule to finish</option>
+                  </select>
+                  <button class="functions-item-parts-option-button">Go</button>
+                  <button class="functions-item-parts-option-button">Personalize</button>
+               </div>
+            </div>
+
+            <div>
+               <div id="gantt_here"></div>
+            </div>
+
+         </div>
+      </div>
    </div>
 
 
 
 </body>
-<script src="./js/index.js"></script>
+<script src="./js/index.js" type="modul"></script>
+<script src="./js/data.js" type="modul"></script>
+<script src="js/dhtmlxgantt.js"></script>
+<script type="text/javascript">
 
+   gantt.init("gantt_here");
+
+</script>
 </html>
