@@ -384,3 +384,12 @@ function openHome() {
 }
 
 //open function item page (gantt)----------------------------------
+function openFunctionItem(){
+   const functionsItem=document.querySelector('.functions-item');
+   const functions=document.querySelector('.functions');
+
+   functions.style.display = "none";
+   functionsItem.style.display = "flex";
+}
+
+
