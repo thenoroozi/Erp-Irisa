@@ -66,7 +66,8 @@ body {
             display: block;
          }
       }
-      .accessList-topic{
+
+      .accessList-topic {
          display: flex;
       }
 
@@ -219,19 +220,20 @@ body {
 }
 
 @for $i from 1 through 4 {
-   .subList-#{$i}{
+   .subList-#{$i} {
       display: none;
       list-style: none;
       color: $fontGary;
       padding-right: 20px;
-       margin-top: 5px;
+      margin-top: 5px;
+
       .back {
          @include display(flex, center, flex-start);
          margin-left: 5px;
          margin-bottom: 5px;
          cursor: pointer;
          padding: 5px;
-         @include box(100%,$hoverList,0,$shadowColor,10px);
+         @include box(100%, $hoverList, 0, $shadowColor, 10px);
 
          &:hover {
             color: $white;
@@ -302,9 +304,11 @@ body {
 .dashboard-card.steady {
    width: calc(100% - 30px);
 }
-.accessList-topic.steady{
+
+.accessList-topic.steady {
    display: flex;
 }
+
 .box.steady {
    width: calc(100% - 90px);
    margin-left: 80px;
@@ -355,6 +359,10 @@ body {
 .steady-icon.steady {
    transform: rotate(180deg);
    background-color: $hoverList;
+}
+
+.functions-item.steady {
+   width: calc(100vw - 270px);
 }
 
 //start header-------------------------------------------
@@ -808,7 +816,8 @@ header {
    }
 }
 
-.box-options-1, .box-options-2 {
+.box-options-1,
+.box-options-2 {
    display: none;
    position: absolute;
    @include box(170px, $white, 4px, $shadowColor, 12px);
@@ -876,8 +885,8 @@ table {
 .functions {
    width: calc(100vw - 40px);
    margin: 10px auto;
-   padding: 10px 10px;
-   @include display(none, center, center);
+   padding: 10px;
+   @include display(flex, center, center);
    flex-direction: column;
 }
 
@@ -1009,4 +1018,139 @@ table {
    img {
       width: 35px;
    }
+}
+
+//start functions item (Gantt)----------------------------------------------
+.functions-item {
+   width: calc(100vw - 40px);
+   margin: 10px auto;
+   padding: 10px;
+   @include display(flex, center, center);
+   flex-direction: column;
+}
+
+.functions-item-mainMenu {
+   width: calc(100% - 30px);
+   padding: 15px;
+   background-color: $darkLight;
+   border-radius: 12px 12px 0 0;
+   margin-bottom: 10px;
+
+   ul {
+      @include display(flex, center, center);
+      list-style: none;
+
+      li {
+         margin-left: 10px;
+         font-size: 18px;
+
+         &:hover {
+            a {
+               color: $white;
+            }
+         }
+      }
+
+      a {
+         color: $fontGary;
+         text-decoration: none;
+      }
+   }
+}
+
+.functions-item-subMenu {
+   @include display(flex, center, flex-start);
+   list-style: none;
+   padding: 5px;
+   border-bottom: 0.5px solid $hoverList;
+   li{
+      margin-left: 15px;
+      padding: 8px;
+      border-radius: 8px;
+      &:first-child{
+         background-color: $fontGary;
+      }
+   }
+   a{
+      text-decoration: none;
+      color: $black;
+   }
+}
+
+.functions-item-part-1 {
+   @include display(flex, center, space-around);
+   padding: 8px;
+   margin-bottom: 10px;
+
+   .functions-item-parts-option {
+      @include display(flex, center, space-between);
+   }
+
+   select {
+      padding: 10px 12px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border: none;
+      font-size: 17px;
+      margin-left: 8px;
+   }
+
+   button {
+      padding: 10px;
+      border: none;
+      @include display(flex, center, center);
+      border-left: 0.5px solid $hoverList;
+      background-color: $blueButton;
+      font-size: 17px;
+      cursor: pointer;
+
+      &:last-child {
+         border-top-right-radius: 8px;
+         border-bottom-right-radius: 8px;
+      }
+   }
+}
+
+.functions-item-part-2 {
+   @include display(flex, center, space-between);
+   padding: 0px 10px;
+   margin-bottom: 10px;
+
+   .functions-item-parts-option {
+      @include display(flex, center, space-between);
+   }
+
+   select {
+      padding: 10px 12px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border: none;
+      font-size: 17px;
+      margin-left: 8px;
+   }
+
+   button {
+      padding: 10px;
+      border: none;
+      @include display(flex, center, center);
+      border-left: 0.5px solid $hoverList;
+      background-color: $blueButton;
+      font-size: 17px;
+      cursor: pointer;
+
+      &:first-child {
+         border: none;
+         border-radius: 8px;
+      }
+
+      &:last-child {
+         border-top-right-radius: 8px;
+         border-bottom-right-radius: 8px;
+      }
+   }
+}
+#gantt_here{
+   width: calc(100% - 20px);
+   margin: 5px auto;
+   height: 600px;
 }
