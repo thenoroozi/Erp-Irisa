@@ -1,3 +1,6 @@
+import { Disturbution } from "./data";
+
+
 //hover on icons in header
 const notificationIcon = document.querySelector(".notife-icon");
 const homeIcon = document.querySelector(".home-icon");
@@ -79,11 +82,9 @@ function openNextPage(event) {
 
 function back(event1, page) {
    let subList = document.querySelector(".subList-" + event1);
-   console.log(subList);
    if (page == 1) {
       mainList.classList.remove('active');
       subList.classList.remove('active');
-      console.log(subList);
    }
 }
 
@@ -104,6 +105,7 @@ function steadyAccessList() {
    const accessMenu = document.querySelector('.accessMenu');
    const steadyIcon = document.querySelector('.steady-icon');
    const accessListTopic=document.querySelector('.accessList-topic');
+   const functionsItem=document.querySelector('.functions-item');
 
    body.classList.toggle('steady');
    for (let i = 0; i < dashboardCard.length; i++) {
@@ -119,6 +121,7 @@ function steadyAccessList() {
    steadyIcon.classList.toggle('steady');
    functions.classList.toggle('steady');
    accessListTopic.classList.toggle('steady');
+   functionsItem.classList.toggle('steady');
 }
 //building the function lists table
 function openFunctionList(event) {
@@ -160,6 +163,8 @@ function openFunctionList(event) {
 
       })
 }
+
+
 //select items in table
 function changeSelect() {
    const selectAll = document.querySelector(".select-btn").childNodes[0];
