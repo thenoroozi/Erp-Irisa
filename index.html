@@ -34,7 +34,7 @@
 
          <ul class="list-1">
             <li>
-               <div>Disturbution List</div>
+               <div onclick="openFunctionListJs()">Disturbution List</div>
                <img class="list-1-star-1" onclick="ChangeStar(1,1)" src="./image/icon/starOff.png">
             </li>
             <li>
@@ -537,7 +537,7 @@
          </div>
       </div>
 
-      <div class="functions-item" style="display: none;">
+      <div class="functions-item">
          <div class="box">
             <div class="functions-item-mainMenu">
                <ul>
@@ -610,9 +610,8 @@
 
 
 </body>
-<script src="./js/index.js" type="modul"></script>
-<script src="./js/data.js" type="modul"></script>
-<script src="js/dhtmlxgantt.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/dhtmlxgantt.js"></script>
 <script type="text/javascript">
 
    gantt.init("gantt_here");
