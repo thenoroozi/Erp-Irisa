@@ -1494,7 +1494,7 @@ table td {
   width: calc(100vw - 40px);
   margin: 10px auto;
   padding: 10px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -1651,7 +1651,7 @@ table td {
   width: calc(100vw - 40px);
   margin: 10px auto;
   padding: 10px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;

@@ -886,7 +886,7 @@ table {
    width: calc(100vw - 40px);
    margin: 10px auto;
    padding: 10px;
-   @include display(flex, center, center);
+   @include display(none, center, center);
    flex-direction: column;
 }
 
@@ -1025,10 +1025,9 @@ table {
    width: calc(100vw - 40px);
    margin: 10px auto;
    padding: 10px;
-   @include display(flex, center, center);
+   @include display(none, center, center);
    flex-direction: column;
 }
-
 .functions-item-mainMenu {
    width: calc(100% - 30px);
    padding: 15px;
