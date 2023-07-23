@@ -1,4 +1,4 @@
-export const Disturbution=[
+const Disturbution=[
    {id:1 ,
    project: "یکپارچه‌سازی سیستم کنترل دسترس" ,
 organization: "مدیریت کسب و کار مدیریت تحول دیجیتال" ,
@@ -130,3 +130,5 @@ projectType:"Cost/Event(AUT)" ,
 status:"Executive" ,
 customer: "فولاد مبارکه",},
 ];
+
+export default Disturbution;

@@ -1,6 +1,161 @@
-import { Disturbution } from "./data";
-
-
+// import {Disturbution} from "./data.js";
+const Disturbution = [{
+      id: 1,
+      project: "یکپارچه‌سازی سیستم کنترل دسترس",
+      organization: "مدیریت کسب و کار مدیریت تحول دیجیتال",
+      projectManager: "میلاد هلاچیان",
+      projectNumber: 999,
+      projectStartDate: "1394/11/14",
+      projectFinishDate: "1399/07/02",
+      projectType: "Cost/Event(NIS)",
+      status: "Executive",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 2,
+      project: "نگهداری شبکه فولاد خراسان 98-99",
+      organization: "مدیریت کسب و کار شبکه و زیرساخت",
+      projectManager: "ساسان عبداله زاده",
+      projectNumber: 996,
+      projectStartDate: "1394/11/14",
+      projectFinishDate: "1399/06/31",
+      projectType: "Cost/Event(NIS)",
+      status: "pending close",
+      customer: "فولاد خراسان",
+   },
+   {
+      id: 3,
+      project: "توسعه فناوری RFID فولاد مبارکه",
+      organization: "مدیریت کسب و کار شبکه و زیرساخت",
+      projectManager: "رضا اخوان",
+      projectNumber: 994,
+      projectStartDate: "1394/11/14",
+      projectFinishDate: "1396/06/08",
+      projectType: "Event/Event(NIS)",
+      status: "pending close",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 4,
+      project: "تامین تجهیزات موردی مبارکه",
+      organization: "مدیریت کسب و کار شبکه و زیرساخت",
+      projectManager: "ساسان عبداله زاده",
+      projectNumber: 983,
+      projectStartDate: "1394/11/14",
+      projectFinishDate: "1399/06/01",
+      projectType: "Event/Event(NIS)",
+      status: "pending close",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 5,
+      project: "توسعه سیستمهای نوین مبارکه 98",
+      organization: "مدیریت کسب و کار سیستم های اطلاعاتی",
+      projectManager: "مسیح حاجی صادقیان",
+      projectNumber: 952,
+      projectStartDate: "1398/01/05",
+      projectFinishDate: "1702/03/06",
+      projectType: "Cost/Event(IS)",
+      status: "Executive",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 6,
+      project: "نگهداری شبکع فولاد سفیددشت 98",
+      organization: "مدیریت کسب و کارشبکه و زیر ساخت",
+      projectManager: "سینا ایرانپور",
+      projectNumber: 943,
+      projectStartDate: "1398/01/01",
+      projectFinishDate: "1700/06/12",
+      projectType: "Event/Event(NIS)",
+      status: "pending close",
+      customer: "شرکت فولاد سفید دشت چهارمحال بختیاری",
+   },
+   {
+      id: 7,
+      project: "اسکادا سیالات فولاد مبارکه",
+      organization: "مدیریت کسب و کار اتوماسیون صنعتی",
+      projectManager: "احسان عبداله زاده",
+      projectNumber: 937,
+      projectStartDate: "1394/11/14",
+      projectFinishDate: "1398/11/14",
+      projectType: "Cost/Event(AUT)",
+      status: "pending close",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 8,
+      project: "دوبلیکشین سیکنالهای نورد سیاه",
+      organization: "مدیریت کسب و کار اتوماسیون صنعتی",
+      projectManager: "مهرداد صفاری پور",
+      projectNumber: 932,
+      projectStartDate: "1397/11/01",
+      projectFinishDate: "1398/11/14",
+      projectType: "Cost/Event(AUT)",
+      status: "pending close",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 9,
+      project: " امیر کبیر کاشان CGL سیستم کنترل ",
+      organization: "مدیریت کسب و کار اتوماسیون صنعتی",
+      projectManager: "شاهین خسرویان",
+      projectNumber: 905,
+      projectStartDate: "1397/06/10",
+      projectFinishDate: "1398/04/01",
+      projectType: "Cost/Event(AUT)",
+      status: "pending close",
+      customer: "فولاد امیرکبیر کاشان",
+   },
+   {
+      id: 10,
+      project: "درایوهای نورد گرم فولاد مبارکه",
+      organization: "مدیریت کسب و کار اتوماسیون صنعتی",
+      projectManager: "علی طالبی",
+      projectNumber: 901,
+      projectStartDate: "1397/05/01",
+      projectFinishDate: "1399/12/10",
+      projectType: "Cost/Event(AUT)",
+      status: "Executive",
+      customer: "شرکت ایراسکو",
+   },
+   {
+      id: 11,
+      project: "دارایی ثابت",
+      organization: "شرکت ایریسا",
+      projectManager: "ایرج فخری",
+      projectNumber: 900,
+      projectStartDate: "1398/03/19",
+      projectFinishDate: "1419/03/20",
+      projectType: "capital",
+      status: "submitted",
+      customer: "",
+   },
+   {
+      id: 12,
+      project: "طراحی campus فولاد مبارکه",
+      organization: "مدیریت کسب و کارشبکه و زیر ساخت",
+      projectManager: "سینا ایرانپور",
+      projectNumber: 872,
+      projectStartDate: "1397/01/01",
+      projectFinishDate: "1400/01/17",
+      projectType: "Cost/Event(NIS)",
+      status: "Executive",
+      customer: "فولاد مبارکه",
+   },
+   {
+      id: 13,
+      project: "اتوماسیون سطح سه فولاد سیا",
+      organization: "مدیریت کسب و کار اتوماسیون صنعتی",
+      projectManager: "مسعود اعظمی بیرانوند",
+      projectNumber: 861,
+      projectStartDate: "1396/12/01",
+      projectFinishDate: "1398/12/28",
+      projectType: "Cost/Event(AUT)",
+      status: "Executive",
+      customer: "فولاد مبارکه",
+   },
+];
 //hover on icons in header
 const notificationIcon = document.querySelector(".notife-icon");
 const homeIcon = document.querySelector(".home-icon");
@@ -44,7 +199,7 @@ function ToggleMenu(event) {
       toggleFavoriteMenu.classList.remove('active');
    } else if (event == 2) {
       toggleUserMenu.classList.toggle('active');
-   }else if(event==3){
+   } else if (event == 3) {
       toggleFavoriteMenu.classList.toggle('active');
       toggleNotifeMenu.classList.remove('active');
    }
@@ -64,7 +219,6 @@ function ChangeStar(list, num) {
 
 function openList(event) {
    let arrow = document.querySelector("#arrow-left-" + event);
-   let listTitr = document.querySelector('.listTitr-' + event);
    let list = document.querySelector(".list-" + event);
 
    arrow.classList.toggle('active');
@@ -104,8 +258,8 @@ function steadyAccessList() {
    const dashboard = document.querySelector('.dashboard');
    const accessMenu = document.querySelector('.accessMenu');
    const steadyIcon = document.querySelector('.steady-icon');
-   const accessListTopic=document.querySelector('.accessList-topic');
-   const functionsItem=document.querySelector('.functions-item');
+   const accessListTopic = document.querySelector('.accessList-topic');
+   const functionsItem = document.querySelector('.functions-item');
 
    body.classList.toggle('steady');
    for (let i = 0; i < dashboardCard.length; i++) {
@@ -164,7 +318,46 @@ function openFunctionList(event) {
       })
 }
 
+function openFunctionListJs(){
+   const main = document.querySelector('.main');
+   const functions = document.querySelector('.functions');
+   let tHeader = document.querySelector('.theader');
+   let tBody = document.querySelector('.functions-tbody');
+   main.style.display = "none";
+   functions.style.display = "flex";
+   tHeader.innerHTML = "";
+   tBody.innerHTML = "";
 
+   let Keys = [];
+   for (const x in Disturbution[0]) {
+      Keys.push(x);
+   }
+   //table header
+   let tableHeaderTr = `<td>select</td>`;
+   let trHead = document.createElement("tr");
+   for (let i = 1; i < Keys.length; i++) {
+      tableHeaderTr += `<td>${Keys[i]}</td>`;
+   }
+   trHead.innerHTML = tableHeaderTr;
+   tHeader.appendChild(trHead);
+
+   //table body
+   Disturbution.map(project => {
+         let trBody = document.createElement("tr");
+         trBody.innerHTML = ``;
+         let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
+         for (let i = 1; i < Keys.length; i++) {
+            if (i == 1) {
+               tableBodyTr += `<td><a href="#" onclick="openFunctionItem()">${project[Keys[i]]}</a></td>`;
+            }else{
+               tableBodyTr += `<td>${project[Keys[i]]}</td>`;
+            }
+         }
+         trBody.innerHTML = tableBodyTr;
+         tBody.append(trBody);
+
+     })
+}
 //select items in table
 function changeSelect() {
    const selectAll = document.querySelector(".select-btn").childNodes[0];
@@ -189,3 +382,5 @@ function openHome() {
    main.style.display = "flex";
    functions.style.display = "none";
 }
+
+//open function item page (gantt)----------------------------------
