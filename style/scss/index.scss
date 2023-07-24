@@ -1028,6 +1028,20 @@ table {
    @include display(none, center, center);
    flex-direction: column;
 }
+
+.functions-project {
+   display: block;
+}
+
+.functions-resources,
+.functions-workpkan,
+.functions-reporting,
+.functions-financial,
+.functions-procurement,
+.functions-cotrol {
+   display: none;
+}
+
 .functions-item-mainMenu {
    width: calc(100% - 30px);
    padding: 15px;
@@ -1040,37 +1054,44 @@ table {
       list-style: none;
 
       li {
-         margin-left: 10px;
+         margin-left: 15px;
          font-size: 18px;
-
-         &:hover {
-            a {
-               color: $white;
-            }
-         }
-      }
-
-      a {
-         color: $fontGary;
-         text-decoration: none;
       }
    }
 }
-
+@for $j from 1 through 7{
+   .functions-item-mainMenu-titre#{$j}{
+      color: $fontGary;
+      text-decoration: none; 
+      &:hover {
+            color: $white;
+      }
+   }
+   .functions-item-mainMenu-titre#{$j}.active{
+      color: $white;
+   }
+}
 .functions-item-subMenu {
    @include display(flex, center, flex-start);
    list-style: none;
    padding: 5px;
    border-bottom: 0.5px solid $hoverList;
-   li{
+
+   li {
       margin-left: 15px;
       padding: 8px;
       border-radius: 8px;
-      &:first-child{
+
+      &:first-child {
+         background-color: $fontGary;
+      }
+
+      &:hover {
          background-color: $fontGary;
       }
    }
-   a{
+
+   a {
       text-decoration: none;
       color: $black;
    }
@@ -1148,7 +1169,8 @@ table {
       }
    }
 }
-#gantt_here{
+
+#gantt_here {
    width: calc(100% - 20px);
    margin: 5px auto;
    height: 600px;

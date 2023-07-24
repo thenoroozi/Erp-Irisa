@@ -1657,6 +1657,19 @@ table td {
   flex-direction: column;
 }
 
+.functions-project {
+  display: block;
+}
+
+.functions-resources,
+.functions-workpkan,
+.functions-reporting,
+.functions-financial,
+.functions-procurement,
+.functions-cotrol {
+  display: none;
+}
+
 .functions-item-mainMenu {
   width: calc(100% - 30px);
   padding: 15px;
@@ -1671,15 +1684,92 @@ table td {
   list-style: none;
 }
 .functions-item-mainMenu ul li {
-  margin-left: 10px;
+  margin-left: 15px;
   font-size: 18px;
 }
-.functions-item-mainMenu ul li:hover a {
-  color: #fff;
-}
-.functions-item-mainMenu ul a {
+
+.functions-item-mainMenu-titre1 {
   color: #878787;
   text-decoration: none;
+}
+.functions-item-mainMenu-titre1:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre1.active {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre2 {
+  color: #878787;
+  text-decoration: none;
+}
+.functions-item-mainMenu-titre2:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre2.active {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre3 {
+  color: #878787;
+  text-decoration: none;
+}
+.functions-item-mainMenu-titre3:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre3.active {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre4 {
+  color: #878787;
+  text-decoration: none;
+}
+.functions-item-mainMenu-titre4:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre4.active {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre5 {
+  color: #878787;
+  text-decoration: none;
+}
+.functions-item-mainMenu-titre5:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre5.active {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre6 {
+  color: #878787;
+  text-decoration: none;
+}
+.functions-item-mainMenu-titre6:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre6.active {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre7 {
+  color: #878787;
+  text-decoration: none;
+}
+.functions-item-mainMenu-titre7:hover {
+  color: #fff;
+}
+
+.functions-item-mainMenu-titre7.active {
+  color: #fff;
 }
 
 .functions-item-subMenu {
@@ -1696,6 +1786,9 @@ table td {
   border-radius: 8px;
 }
 .functions-item-subMenu li:first-child {
+  background-color: #878787;
+}
+.functions-item-subMenu li:hover {
   background-color: #878787;
 }
 .functions-item-subMenu a {
