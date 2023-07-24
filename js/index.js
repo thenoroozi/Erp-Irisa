@@ -318,7 +318,7 @@ function openFunctionList(event) {
       })
 }
 
-function openFunctionListJs(){
+function openFunctionListJs() {
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
@@ -343,20 +343,20 @@ function openFunctionListJs(){
 
    //table body
    Disturbution.map(project => {
-         let trBody = document.createElement("tr");
-         trBody.innerHTML = ``;
-         let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
-         for (let i = 1; i < Keys.length; i++) {
-            if (i == 1) {
-               tableBodyTr += `<td><a href="#" onclick="openFunctionItem()">${project[Keys[i]]}</a></td>`;
-            }else{
-               tableBodyTr += `<td>${project[Keys[i]]}</td>`;
-            }
+      let trBody = document.createElement("tr");
+      trBody.innerHTML = ``;
+      let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
+      for (let i = 1; i < Keys.length; i++) {
+         if (i == 1) {
+            tableBodyTr += `<td><a href="#" onclick="openFunctionItem()">${project[Keys[i]]}</a></td>`;
+         } else {
+            tableBodyTr += `<td>${project[Keys[i]]}</td>`;
          }
-         trBody.innerHTML = tableBodyTr;
-         tBody.append(trBody);
+      }
+      trBody.innerHTML = tableBodyTr;
+      tBody.append(trBody);
 
-     })
+   })
 }
 //select items in table
 function changeSelect() {
@@ -379,7 +379,7 @@ function changeSelect() {
 function openHome() {
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
-   const functionsItem=document.querySelector('.functions-item');
+   const functionsItem = document.querySelector('.functions-item');
 
    main.style.display = "flex";
    functionsItem.style.display = "none";
@@ -387,12 +387,86 @@ function openHome() {
 }
 
 //open function item page (gantt)----------------------------------
-function openFunctionItem(){
-   const functionsItem=document.querySelector('.functions-item');
-   const functions=document.querySelector('.functions');
+function openFunctionItem() {
+   const functionsItem = document.querySelector('.functions-item');
+   const functions = document.querySelector('.functions');
 
    functions.style.display = "none";
    functionsItem.style.display = "flex";
 }
 
-
+function openFunctionItemPage(event) {
+   const project = document.querySelector('.functions-project');
+   const resources = document.querySelector('.functions-resources');
+   const workpkan = document.querySelector('.functions-workpkan');
+   const reporting = document.querySelector('.functions-reporting');
+   const financial = document.querySelector('.functions-financial');
+   const procurement = document.querySelector('.functions-procurement');
+   const cotrol = document.querySelector('.functions-cotrol');
+   
+   switch (event) {
+      case 1:
+         project.style.display = "none";
+         resources.style.display = "block";
+         workpkan.style.display = "none";
+         reporting.style.display = "none";
+         financial.style.display = "none";
+         procurement.style.display = "none";
+         cotrol.style.display = "none";
+         break;
+      case 2:
+         project.style.display = "block";
+         resources.style.display = "none";
+         workpkan.style.display = "none";
+         reporting.style.display = "none";
+         financial.style.display = "none";
+         procurement.style.display = "none";
+         cotrol.style.display = "none";
+         break;
+      case 3:
+         project.style.display = "none";
+         resources.style.display = "none";
+         workpkan.style.display = "block";
+         reporting.style.display = "none";
+         financial.style.display = "none";
+         procurement.style.display = "none";
+         cotrol.style.display = "none";
+         break;
+      case 4:
+         project.style.display = "none";
+         resources.style.display = "none";
+         workpkan.style.display = "none";
+         cotrol.style.display = "block";
+         financial.style.display = "none";
+         reporting.style.display = "none";
+         procurement.style.display = "none";
+         break;
+      case 5:
+         project.style.display = "none";
+         resources.style.display = "none";
+         workpkan.style.display = "none";
+         cotrol.style.display = "none";
+         financial.style.display = "block";
+         reporting.style.display = "none";
+         procurement.style.display = "none";
+         break;
+      case 6:
+         project.style.display = "none";
+         resources.style.display = "none";
+         workpkan.style.display = "none";
+         cotrol.style.display = "none";
+         financial.style.display = "none";
+         reporting.style.display = "block";
+         procurement.style.display = "none";
+         break;
+      case 7:
+         project.style.display = "none";
+         resources.style.display = "none";
+         workpkan.style.display = "none";
+         cotrol.style.display = "none";
+         financial.style.display = "none";
+         reporting.style.display = "none";
+         procurement.style.display = "block";
+         break;
+   }
+}
