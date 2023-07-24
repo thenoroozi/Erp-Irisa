@@ -379,7 +379,10 @@ function changeSelect() {
 function openHome() {
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
+   const functionsItem=document.querySelector('.functions-item');
+
    main.style.display = "flex";
+   functionsItem.style.display = "none";
    functions.style.display = "none";
 }
 
