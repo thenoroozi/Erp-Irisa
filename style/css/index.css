@@ -1552,9 +1552,12 @@ table td {
   align-items: center;
   justify-content: center;
   border-left: 0.5px solid #2F3436;
-  background-color: #3F80FF;
+  background-color: #3a78f5;
   width: 50px;
   cursor: pointer;
+}
+.create-project button:hover {
+  background-color: #0251f0;
 }
 
 .show-project {
@@ -1577,10 +1580,13 @@ table td {
   align-items: center;
   justify-content: center;
   border-left: 0.5px solid #2F3436;
-  background-color: #3F80FF;
+  background-color: #3a78f5;
   font-size: 18px;
   cursor: pointer;
   color: #fff;
+}
+.show-project button:hover {
+  background-color: #0251f0;
 }
 .show-project button:last-child {
   border-top-right-radius: 8px;
@@ -1604,7 +1610,7 @@ table td {
 
 .pagebtn {
   width: fit-content;
-  background-color: #3F80FF;
+  background-color: #3a78f5;
   box-shadow: 1px 1px 2px rgba(99, 99, 99, 0.1450980392);
   border-radius: 8px;
   border: none;
@@ -1613,6 +1619,9 @@ table td {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.pagebtn:hover {
+  background-color: #0251f0;
 }
 .pagebtn img {
   margin: 0 5px;
@@ -1823,9 +1832,12 @@ table td {
   align-items: center;
   justify-content: center;
   border-left: 0.5px solid #2F3436;
-  background-color: #3F80FF;
+  background-color: #3a78f5;
   font-size: 17px;
   cursor: pointer;
+}
+.functions-item-part-1 button:hover {
+  background-color: #0251f0;
 }
 .functions-item-part-1 button:last-child {
   border-top-right-radius: 8px;
@@ -1859,9 +1871,12 @@ table td {
   align-items: center;
   justify-content: center;
   border-left: 0.5px solid #2F3436;
-  background-color: #3F80FF;
+  background-color: #3a78f5;
   font-size: 17px;
   cursor: pointer;
+}
+.functions-item-part-2 button:hover {
+  background-color: #0251f0;
 }
 .functions-item-part-2 button:first-child {
   border: none;

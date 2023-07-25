@@ -937,6 +937,9 @@ table {
       background-color: $blueButton;
       width: 50px;
       cursor: pointer;
+      &:hover{
+         background-color: $blueButtonHover;
+      }
    }
 }
 
@@ -961,8 +964,9 @@ table {
       font-size: 18px;
       cursor: pointer;
       color: $white;
-
-      &:first {}
+      &:hover{
+         background-color: $blueButtonHover;
+      }
 
       &:last-child {
          border-top-right-radius: 8px;
@@ -990,7 +994,9 @@ table {
    display: flex;
    align-items: center;
    cursor: pointer;
-
+   &:hover{
+      background-color: $blueButtonHover;
+   }
    img {
       margin: 0 5px;
    }
@@ -1123,7 +1129,9 @@ table {
       background-color: $blueButton;
       font-size: 17px;
       cursor: pointer;
-
+      &:hover{
+         background-color: $blueButtonHover;
+      }
       &:last-child {
          border-top-right-radius: 8px;
          border-bottom-right-radius: 8px;
@@ -1157,7 +1165,9 @@ table {
       background-color: $blueButton;
       font-size: 17px;
       cursor: pointer;
-
+      &:hover{
+         background-color: $blueButtonHover;
+      }
       &:first-child {
          border: none;
          border-radius: 8px;
