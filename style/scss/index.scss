@@ -1029,10 +1029,12 @@ table {
 //start functions item (Gantt)----------------------------------------------
 .functions-item {
    width: calc(100vw - 40px);
+   height: fit-content;
    margin: 10px auto;
    padding: 10px;
    @include display(none, center, center);
    flex-direction: column;
+   overflow-y: scroll;
 }
 
 .functions-project {
@@ -1072,9 +1074,6 @@ table {
       &:hover {
             color: $white;
       }
-   }
-   .functions-item-mainMenu-titre#{$j}.active{
-      color: $white;
    }
 }
 .functions-item-subMenu {
@@ -1184,4 +1183,11 @@ table {
    width: calc(100% - 20px);
    margin: 5px auto;
    height: 600px;
+}
+.kanban{
+   display: block;
+   width: calc(100% - 20px);
+   margin: 5px auto;
+   height: fit-content;
+   border-top: .8px solid $hoverList;
 }
