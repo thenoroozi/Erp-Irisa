@@ -281,7 +281,7 @@ function steadyAccessList() {
 function openFunctionList(event) {
    const functionsItem = document.querySelector('.functions-item');
    functionsItem.style.display = "none";
-   
+
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
@@ -392,7 +392,7 @@ function openHome() {
    functions.style.display = "none";
 }
 
-//open function item page (gantt)----------------------------------
+//open function item page ----------------------------------
 function openFunctionItem() {
    const functionsItem = document.querySelector('.functions-item');
    const functions = document.querySelector('.functions');
@@ -400,6 +400,9 @@ function openFunctionItem() {
    functions.style.display = "none";
    functionsItem.style.display = "flex";
 }
+
+let previousPageClass='';
+let  previousPage=document.querySelector(".functions-project");
 
 function openFunctionItemPage(event) {
    const project = document.querySelector('.functions-project');
@@ -409,70 +412,49 @@ function openFunctionItemPage(event) {
    const financial = document.querySelector('.functions-financial');
    const procurement = document.querySelector('.functions-procurement');
    const cotrol = document.querySelector('.functions-cotrol');
-   
+
    switch (event) {
       case 1:
-         project.style.display = "none";
-         resources.style.display = "block";
-         workpkan.style.display = "none";
-         reporting.style.display = "none";
-         financial.style.display = "none";
-         procurement.style.display = "none";
-         cotrol.style.display = "none";
+         previousPage.style.display="none";
+         project.style.display = "block";
+         previousPageClass=project.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
       case 2:
-         project.style.display = "block";
-         resources.style.display = "none";
-         workpkan.style.display = "none";
-         reporting.style.display = "none";
-         financial.style.display = "none";
-         procurement.style.display = "none";
-         cotrol.style.display = "none";
+         previousPage.style.display="none";
+         resources.style.display = "block";
+         previousPageClass=resources.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
       case 3:
-         project.style.display = "none";
-         resources.style.display = "none";
+         previousPage.style.display="none";
          workpkan.style.display = "block";
-         reporting.style.display = "none";
-         financial.style.display = "none";
-         procurement.style.display = "none";
-         cotrol.style.display = "none";
+         previousPageClass=workpkan.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
       case 4:
-         project.style.display = "none";
-         resources.style.display = "none";
-         workpkan.style.display = "none";
+         previousPage.style.display="none";
          cotrol.style.display = "block";
-         financial.style.display = "none";
-         reporting.style.display = "none";
-         procurement.style.display = "none";
+         previousPageClass=cotrol.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
       case 5:
-         project.style.display = "none";
-         resources.style.display = "none";
-         workpkan.style.display = "none";
-         cotrol.style.display = "none";
+         previousPage.style.display="none";
          financial.style.display = "block";
-         reporting.style.display = "none";
-         procurement.style.display = "none";
+         previousPageClass=financial.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
       case 6:
-         project.style.display = "none";
-         resources.style.display = "none";
-         workpkan.style.display = "none";
-         cotrol.style.display = "none";
-         financial.style.display = "none";
+         previousPage.style.display="none";
          reporting.style.display = "block";
-         procurement.style.display = "none";
+         previousPageClass=reporting.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
       case 7:
-         project.style.display = "none";
-         resources.style.display = "none";
-         workpkan.style.display = "none";
-         cotrol.style.display = "none";
-         financial.style.display = "none";
-         reporting.style.display = "none";
+         previousPage.style.display="none";
          procurement.style.display = "block";
+         previousPageClass=procurement.className;
+         previousPage=document.querySelector(`.${previousPageClass}`);
          break;
    }
 }
