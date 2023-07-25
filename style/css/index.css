@@ -1873,6 +1873,8 @@ table td {
   margin: 5px auto;
   height: fit-content;
   border-top: 0.8px solid #2F3436;
+  margin-top: 20px;
+  padding-top: 20px;
 }
 
 /*# sourceMappingURL=index.css.map */

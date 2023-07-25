@@ -3830,7 +3830,8 @@ input.svelte-1v47mbj {
    position: relative;
    height: -moz-max-content;
    height: max-content;
-   padding-bottom: var(--wx-padding)
+   padding-bottom: var(--wx-padding);
+   border-radius: 10px;
 }
 
 .wx-virtual-content.svelte-13hgtri.svelte-13hgtri {
@@ -4052,9 +4053,10 @@ input.svelte-1v47mbj {
    min-height: var(--wx-kanban-toolbar-height);
    width: 100%;
    padding: var(--wx-padding);
-   background: var(--wx-kanban-content-background);
+   background-color:#afafaf;
    color: var(--wx-color-font);
-   border-bottom: var(--wx-kanban-toolbar-border)
+   border-bottom: var(--wx-kanban-toolbar-border);
+   border-radius: 10px 10px 0 0 ;
 }
 
 .wx-list-wrapper.svelte-14plw7q {
