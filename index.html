@@ -541,83 +541,92 @@
          <div class="box">
             <div class="functions-item-mainMenu">
                <ul>
-                  <li><a href="#" class="functions-item-mainMenu-titre1" onclick="openFunctionItemPage(1)">Project</a></li>
-                  <li><a href="#" class="functions-item-mainMenu-titre2" onclick="openFunctionItemPage(2)">Resources</a></li>
-                  <li><a href="#" class="functions-item-mainMenu-titre3" onclick="openFunctionItemPage(3)">Workplan</a></li>
-                  <li><a href="#" class="functions-item-mainMenu-titre4" onclick="openFunctionItemPage(4)">Control</a></li>
-                  <li><a href="#" class="functions-item-mainMenu-titre5" onclick="openFunctionItemPage(5)">Financial</a></li>
-                  <li><a href="#" class="functions-item-mainMenu-titre6" onclick="openFunctionItemPage(6)">Reporting</a></li>
-                  <li><a href="#" class="functions-item-mainMenu-titre7" onclick="openFunctionItemPage(7)">Procurement</a></li>
+                  <li><a href="#" class="functions-item-mainMenu-titre1" onclick="openFunctionItemPage(1)">Project</a>
+                  </li>
+                  <li><a href="#" class="functions-item-mainMenu-titre2" onclick="openFunctionItemPage(2)">Resources</a>
+                  </li>
+                  <li><a href="#" class="functions-item-mainMenu-titre3" onclick="openFunctionItemPage(3)">Workplan</a>
+                  </li>
+                  <li><a href="#" class="functions-item-mainMenu-titre4" onclick="openFunctionItemPage(4)">Control</a>
+                  </li>
+                  <li><a href="#" class="functions-item-mainMenu-titre5" onclick="openFunctionItemPage(5)">Financial</a>
+                  </li>
+                  <li><a href="#" class="functions-item-mainMenu-titre6" onclick="openFunctionItemPage(6)">Reporting</a>
+                  </li>
+                  <li><a href="#" class="functions-item-mainMenu-titre7"
+                        onclick="openFunctionItemPage(7)">Procurement</a></li>
                </ul>
             </div>
+
             <div class="functions-project"></div>
 
             <div class="functions-resources"></div>
 
             <div class="functions-workpkan">
-               
-            <ul class="functions-item-subMenu" >
-               <li><a href="#">Tasks</a></li>
-               <li><a href="#">Deliverables</a></li>
-               <li><a href="#">Resources</a></li>
-               <li><a href="#">Setup</a></li>
-            </ul>
 
-            <div class="functions-item-part-1">
-               <div class="functions-item-parts-option">
-                  <label for="Display">Display </label>
-                  <select name="Display" id="Display">
-                     <option value="Hierarchy">Hierarchy</option>
-                     <option value="List">List</option>
-                     <option value="Gantt">Gantt</option>
-                  </select>
-                  <button class="functions-item-parts-option-button">Go</button>
+               <ul class="functions-item-subMenu">
+                  <li><a href="#">Tasks</a></li>
+                  <li><a href="#">Deliverables</a></li>
+                  <li><a href="#">Resources</a></li>
+                  <li><a href="#">Setup</a></li>
+               </ul>
+
+               <div class="functions-item-part-1">
+                  <div class="functions-item-parts-option">
+                     <label for="Display">Display </label>
+                     <select name="Display" id="Display">
+                        <option value="Hierarchy">Hierarchy</option>
+                        <option value="List">List</option>
+                        <option value="Gantt">Gantt</option>
+                     </select>
+                     <button class="functions-item-parts-option-button">Go</button>
+                  </div>
+
+                  <div class="functions-item-parts-option">
+                     <label for="Action">Action </label>
+                     <select name="Action" id="Action">
+                        <option value="1">Maintain versions</option>
+                        <option value="2">Mass update progress</option>
+                        <option value="3">Printable page</option>
+                        <option value="4">Update current working version</option>
+                        <option value="5">View workplan cost</option>
+                     </select>
+                     <button class="functions-item-parts-option-button">Go</button>
+                  </div>
                </div>
 
-               <div class="functions-item-parts-option">
-                  <label for="Action">Action </label>
-                  <select name="Action" id="Action">
-                     <option value="1">Maintain versions</option>
-                     <option value="2">Mass update progress</option>
-                     <option value="3">Printable page</option>
-                     <option value="4">Update current working version</option>
-                     <option value="5">View workplan cost</option>
-                  </select>
-                  <button class="functions-item-parts-option-button">Go</button>
+               <div class="functions-item-part-2">
+                  <button>Export</button>
+
+                  <div class="functions-item-parts-option">
+                     <label for="View">View </label>
+                     <select name="View" id="View">
+                        <option value="1">All tasks</option>
+                        <option value="2">Critical tasks</option>
+                        <option value="3">Milestones</option>
+                        <option value="4">Phases</option>
+                        <option value="5">Tasks Estimated to finish late</option>
+                        <option value="6">Tasks schedule to finish</option>
+                     </select>
+                     <button class="functions-item-parts-option-button">Go</button>
+                     <button class="functions-item-parts-option-button">Personalize</button>
+                  </div>
                </div>
-            </div>
 
-            <div class="functions-item-part-2">
-               <button>Export</button>
-
-               <div class="functions-item-parts-option">
-                  <label for="View">View </label>
-                  <select name="View" id="View">
-                     <option value="1">All tasks</option>
-                     <option value="2">Critical tasks</option>
-                     <option value="3">Milestones</option>
-                     <option value="4">Phases</option>
-                     <option value="5">Tasks Estimated to finish late</option>
-                     <option value="6">Tasks schedule to finish</option>
-                  </select>
-                  <button class="functions-item-parts-option-button">Go</button>
-                  <button class="functions-item-parts-option-button">Personalize</button>
+               <div>
+                  <div id="gantt_here"></div>
                </div>
-            </div>
-
-            <div>
-               <div id="gantt_here"></div>
-            </div>
 
             </div>
+            
             <div class="functions-reporting"></div>
 
             <div class="functions-financial"></div>
 
             <div class="functions-procurement"></div>
-            
+
             <div class="functions-cotrol"></div>
-            
+
          </div>
       </div>
    </div>
@@ -632,4 +641,5 @@
    gantt.init("gantt_here");
 
 </script>
+
 </html>
