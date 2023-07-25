@@ -279,6 +279,9 @@ function steadyAccessList() {
 }
 //building the function lists table
 function openFunctionList(event) {
+   const functionsItem = document.querySelector('.functions-item');
+   functionsItem.style.display = "none";
+   
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
@@ -319,6 +322,9 @@ function openFunctionList(event) {
 }
 
 function openFunctionListJs() {
+   const functionsItem = document.querySelector('.functions-item');
+   functionsItem.style.display = "none";
+   
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
