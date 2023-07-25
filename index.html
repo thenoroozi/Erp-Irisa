@@ -6,6 +6,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="./style/css/index.css">
    <link rel="stylesheet" href="./style/css/dhtmlxgantt.css">
+   <link rel="stylesheet" href="./style/css/kanban.css" />
+   
    <title>Irisa E-business</title>
 </head>
 
@@ -541,26 +543,34 @@
          <div class="box">
             <div class="functions-item-mainMenu">
                <ul>
-                  <li><a href="#" class="functions-item-mainMenu-titre1" onclick="openFunctionItemPage(1)">Project</a>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre1" onclick="openFunctionItemPage(1)">Project</a>
                   </li>
-                  <li><a href="#" class="functions-item-mainMenu-titre2" onclick="openFunctionItemPage(2)">Resources</a>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre2" onclick="openFunctionItemPage(2)">Resources</a>
                   </li>
-                  <li><a href="#" class="functions-item-mainMenu-titre3" onclick="openFunctionItemPage(3)">Workplan</a>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre3" onclick="openFunctionItemPage(3)">Workplan</a>
                   </li>
-                  <li><a href="#" class="functions-item-mainMenu-titre4" onclick="openFunctionItemPage(4)">Control</a>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre4" onclick="openFunctionItemPage(4)">Control</a>
                   </li>
-                  <li><a href="#" class="functions-item-mainMenu-titre5" onclick="openFunctionItemPage(5)">Financial</a>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre5" onclick="openFunctionItemPage(5)">Financial</a>
                   </li>
-                  <li><a href="#" class="functions-item-mainMenu-titre6" onclick="openFunctionItemPage(6)">Reporting</a>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre6" onclick="openFunctionItemPage(6)">Reporting</a>
                   </li>
-                  <li><a href="#" class="functions-item-mainMenu-titre7"
-                        onclick="openFunctionItemPage(7)">Procurement</a></li>
+                  <li>
+                     <a href="#" class="functions-item-mainMenu-titre7"
+                        onclick="openFunctionItemPage(7)">Procurement</a>
+                  </li>
                </ul>
             </div>
 
-            <div class="functions-project"></div>
+            <div class="functions-project">11111</div>
 
-            <div class="functions-resources"></div>
+            <div class="functions-resources">22222</div>
 
             <div class="functions-workpkan">
 
@@ -616,16 +626,22 @@
                <div>
                   <div id="gantt_here"></div>
                </div>
-
+        
+               <div class="g-wrap kanban">
+                  <div id="toolbar"></div>
+                  <div id="root"></div>
+               </div>
             </div>
-            
-            <div class="functions-reporting"></div>
 
-            <div class="functions-financial"></div>
+            <div class="functions-cotrol">4444</div>
 
-            <div class="functions-procurement"></div>
+            <div class="functions-financial">55555</div>
 
-            <div class="functions-cotrol"></div>
+            <div class="functions-reporting">6666</div>
+
+
+            <div class="functions-procurement">7777</div>
+
 
          </div>
       </div>
@@ -636,9 +652,25 @@
 </body>
 <script src="./js/index.js"></script>
 <script src="./js/dhtmlxgantt.js"></script>
+<script src="./js/data.js"></script>
+<script type="text/javascript" src="./js/kanban.js"></script>
+
 <script type="text/javascript">
 
    gantt.init("gantt_here");
+   const { Kanban, Toolbar, defaultEditorShape } = kanban;
+      const { columns, cards, rows, users, cardShape } = getData();
+
+      const board = new Kanban("#root", {
+         columns,
+         cards,
+         rows,
+         rowKey: "type",
+         cardShape,
+      });
+      new Toolbar("#toolbar", {
+         api: board.api,
+      });
 
 </script>
 
