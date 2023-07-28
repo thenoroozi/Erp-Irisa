@@ -1823,7 +1823,7 @@ table td {
   align-items: center;
   justify-content: space-between;
   padding: 0px 10px;
-  margin-bottom: 10px;
+  margin: 10px auto;
 }
 .functions-item-part-2 .functions-item-parts-option {
   display: flex;
@@ -1875,6 +1875,50 @@ table td {
   border-top: 0.8px solid #2F3436;
   margin-top: 20px;
   padding-top: 20px;
+}
+
+.functions-project thead {
+  background-color: #12181A;
+  color: #fff;
+}
+
+.project-specifications {
+  display: grid;
+  align-items: flex-start;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  list-style: none;
+  width: auto;
+  margin: 10px auto;
+  padding: 0 10px;
+}
+.project-specifications li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.project-specifications li span {
+  margin-left: 15px;
+}
+
+.table-titre {
+  border-top: 0.5px solid #2F3436;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.table-titre button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3a78f5;
+  font-size: 17px;
+  cursor: pointer;
+}
+.table-titre button:hover {
+  background-color: #0251f0;
 }
 
 /*# sourceMappingURL=index.css.map */

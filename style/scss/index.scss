@@ -1141,7 +1141,7 @@ table {
 .functions-item-part-2 {
    @include display(flex, center, space-between);
    padding: 0px 10px;
-   margin-bottom: 10px;
+   margin: 10px auto;
 
    .functions-item-parts-option {
       @include display(flex, center, space-between);
@@ -1178,7 +1178,7 @@ table {
       }
    }
 }
-
+//workplan page---------------------------------------------
 #gantt_here {
    width: calc(100% - 20px);
    margin: 5px auto;
@@ -1192,4 +1192,43 @@ table {
    border-top: .8px solid $hoverList;
    margin-top: 20px;
    padding-top: 20px;
+}
+
+//project page --------------------------------------
+.functions-project{
+   thead{
+      background-color: $darkLight;
+      color: $white;
+   }
+}
+.project-specifications{
+   @include display(grid,flex-start,center);
+   grid-template-columns: repeat(2,1fr);
+   gap: 10px;
+   list-style: none;
+   width: auto;
+   margin: 10px auto;
+   padding: 0 10px;
+   li{
+      @include display(flex,center,flex-start);
+      span{
+         margin-left: 15px;
+      }
+   }
+}
+.table-titre{
+    border-top: .5px solid $hoverList;
+    @include display(flex,center,space-between);
+    padding: 10px;
+    button{
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: $blueButton;
+      font-size: 17px;
+      cursor: pointer;
+      &:hover{
+         background-color: $blueButtonHover;
+      }
+    }
 }
