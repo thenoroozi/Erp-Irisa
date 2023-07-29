@@ -402,13 +402,16 @@ function openFunctionItem(event) {
 
    const projectSpecifications=document.querySelector(".project-specifications");
    projectSpecifications.innerHTML=``;
-   
+   let topic=document.querySelector('.project-topic');
+   topic.innerHTML=``;
    let Keys = [];
    for (const x in Disturbution[0]) {
       Keys.push(x);
    }
    Disturbution.map(project =>{
       if(project.id==event){
+         topic.innerHTML=`${Keys[1]} : <h3>${project[Keys[1]]}</h3>`;
+         
          for (let i = 2; i < Keys.length; i++) {
             let li = document.createElement("li");
             li.innerHTML = `<label>${Keys[i]} : </label>
