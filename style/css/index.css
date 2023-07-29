@@ -1931,4 +1931,41 @@ table td {
   color: #fff;
 }
 
+.functions-cotrol .functions-item-parts-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+}
+.functions-cotrol .functions-item-parts-option select {
+  padding: 10px 12px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: none;
+  font-size: 17px;
+  margin-left: 8px;
+}
+.functions-cotrol .functions-item-parts-option button {
+  padding: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3a78f5;
+  font-size: 17px;
+  cursor: pointer;
+  border-left: 0.5px solid #2F3436;
+}
+.functions-cotrol .functions-item-parts-option button:hover {
+  background-color: #0251f0;
+}
+.functions-cotrol .functions-item-parts-option button:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.functions-cotrol thead {
+  background-color: #12181A;
+  color: #fff;
+}
+
 /*# sourceMappingURL=index.css.map */

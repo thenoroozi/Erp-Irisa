@@ -1261,3 +1261,42 @@ table {
       color: $white;
    }
 }
+//control page-----------------------------------------------
+.functions-cotrol {
+   .functions-item-parts-option {
+      @include display(flex, center, flex-start);
+       margin: 10px;
+      select {
+         padding: 10px 12px;
+         border-top-left-radius: 8px;
+         border-bottom-left-radius: 8px;
+         border: none;
+         font-size: 17px;
+         margin-left: 8px;
+      }
+
+      button {
+         padding: 10px;
+         border: none;
+         @include display(flex, center, center);
+         background-color: $blueButton;
+         font-size: 17px;
+         cursor: pointer;
+         border-left: .5px solid $hoverList;
+
+         &:hover {
+            background-color: $blueButtonHover;
+         }
+
+         &:last-child {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+         }
+      }
+   }
+
+   thead {
+      background-color: $darkLight;
+      color: $white;
+   }
+}
