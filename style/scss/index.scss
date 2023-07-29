@@ -1214,7 +1214,10 @@ table {
       color: $white;
    }
 }
-
+.project-topic{
+   @include display(flex,center,flex-start);
+   margin: 10px 0px 0 10px;
+}
 .project-specifications {
    @include display(grid, flex-start, center);
    grid-template-columns: repeat(2, 1fr);

@@ -1882,6 +1882,13 @@ table td {
   color: #fff;
 }
 
+.project-topic {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px 0px 0 10px;
+}
+
 .project-specifications {
   display: grid;
   align-items: flex-start;
