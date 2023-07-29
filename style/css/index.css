@@ -1050,7 +1050,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: none;
-  border-left: 0.5px solid #474747;
+  border-left: 0.5px solid #868686;
   padding: 8px;
   margin-left: 10px;
   cursor: pointer;
@@ -1805,10 +1805,10 @@ table td {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 0.5px solid #2F3436;
   background-color: #3a78f5;
   font-size: 17px;
   cursor: pointer;
+  border-left: 0.5px solid #2F3436;
 }
 .functions-item-part-1 button:hover {
   background-color: #0251f0;
@@ -1903,22 +1903,32 @@ table td {
 }
 
 .table-titre {
-  border-top: 0.5px solid #2F3436;
+  border-top: 0.5px solid #868686;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
 }
-.table-titre button {
+
+.btn {
   padding: 10px;
   border: none;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #3a78f5;
   font-size: 17px;
   cursor: pointer;
+  border-radius: 8px;
+  margin-left: 10px;
 }
-.table-titre button:hover {
+.btn:hover {
   background-color: #0251f0;
+}
+
+.functions-resources thead {
+  background-color: #12181A;
+  color: #fff;
 }
 
 /*# sourceMappingURL=index.css.map */
