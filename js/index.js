@@ -354,7 +354,7 @@ function openFunctionListJs() {
       let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
       for (let i = 1; i < Keys.length; i++) {
          if (i == 1) {
-            tableBodyTr += `<td><a href="#" onclick="openFunctionItem()">${project[Keys[i]]}</a></td>`;
+            tableBodyTr += `<td><a href="#" onclick="openFunctionItem('${project.id}')">${project[Keys[i]]}</a></td>`;
          } else {
             tableBodyTr += `<td>${project[Keys[i]]}</td>`;
          }
@@ -393,16 +393,34 @@ function openHome() {
 }
 
 //open function item page ----------------------------------
-function openFunctionItem() {
+function openFunctionItem(event) {
    const functionsItem = document.querySelector('.functions-item');
    const functions = document.querySelector('.functions');
 
    functions.style.display = "none";
    functionsItem.style.display = "flex";
+
+   const projectSpecifications=document.querySelector(".project-specifications");
+   projectSpecifications.innerHTML=``;
+   
+   let Keys = [];
+   for (const x in Disturbution[0]) {
+      Keys.push(x);
+   }
+   Disturbution.map(project =>{
+      if(project.id==event){
+         for (let i = 2; i < Keys.length; i++) {
+            let li = document.createElement("li");
+            li.innerHTML = `<label>${Keys[i]} : </label>
+            <h4> ${project[Keys[i]]} </h4>`;
+            projectSpecifications.appendChild(li);
+         }
+      }
+   })
 }
 
 let previousPageClass='';
-let  previousPage=document.querySelector(".functions-project");
+let previousPage=document.querySelector(".functions-project");
 
 function openFunctionItemPage(event) {
    const project = document.querySelector('.functions-project');
