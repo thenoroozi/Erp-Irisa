@@ -1308,3 +1308,19 @@ table {
       color: $white;
    }
 }
+//procurement page-----------------------------------------------
+.functions-procurement{
+   thead {
+      background-color: $darkLight;
+      color: $white;
+   }
+}
+.supplier-search{
+   margin-left: 10px;
+   input{
+      padding: 5px;
+   }
+}
+.supplier-Checkbox{
+   margin-left: 15px;
+}

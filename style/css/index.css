@@ -1973,4 +1973,20 @@ table td {
   color: #fff;
 }
 
+.functions-procurement thead {
+  background-color: #12181A;
+  color: #fff;
+}
+
+.supplier-search {
+  margin-left: 10px;
+}
+.supplier-search input {
+  padding: 5px;
+}
+
+.supplier-Checkbox {
+  margin-left: 15px;
+}
+
 /*# sourceMappingURL=index.css.map */
