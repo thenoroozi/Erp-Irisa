@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -1665,7 +1666,6 @@ table td {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow-y: scroll;
 }
 
 .functions-project {
@@ -1865,6 +1865,86 @@ table td {
   width: calc(100% - 20px);
   margin: 5px auto;
   height: 600px;
+}
+
+.gantt_grid_scale .gantt_grid_head_cell,
+.gantt_task .gantt_task_scale .gantt_scale_cell {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dhx_popup--window_active {
+  display: block !important;
+  position: fixed !important;
+  top: 90px !important;
+}
+
+.resource_marker {
+  text-align: center;
+}
+
+.resource_marker div {
+  width: 15px;
+  height: 14px;
+  line-height: 14px;
+  display: inline-block;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+.resource_marker.workday_ok div {
+  background: #51c185;
+}
+
+.resource_marker.workday_over div {
+  background: #ff8686;
+}
+
+/*↑↑↑resource section↑↑↑*/
+.owner-label {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  border-radius: 25px;
+  background: #e6e6e6;
+  color: #6f6f6f;
+  margin: 0 3px;
+  font-weight: bold;
+}
+
+#calendarSelector,
+#calendarDatesEditor,
+#resourceEdit {
+  display: flex;
+}
+
+#calendarSelector select,
+#resourceEdit select {
+  width: 100%;
+}
+
+#slider_container {
+  display: flex;
+}
+
+#slider {
+  width: 150px;
+}
+
+#zoom_level {
+  margin-left: 10px;
+}
+
+.new_calendar_name {
+  z-index: 999999999999;
+}
+
+.weekend {
+  background: #f8f0ff;
 }
 
 .kanban {

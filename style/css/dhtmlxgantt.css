@@ -202,7 +202,7 @@
 
 .gantt_grid_head_cell {
    display: inline-block;
-   vertical-align: top;
+   vertical-align:top;
    border-right: 1px solid #cecece;
    text-align: center;
    position: relative;
