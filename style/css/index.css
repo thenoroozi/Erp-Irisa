@@ -1902,6 +1902,10 @@ table td {
 }
 
 /*↑↑↑resource section↑↑↑*/
+.dhx_slider {
+  margin-left: 10px;
+}
+
 .owner-label {
   width: 20px;
   height: 20px;
