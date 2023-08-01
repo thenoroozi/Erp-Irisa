@@ -1202,7 +1202,8 @@ table {
    font-size: 14px;
    color: rgba(0, 0, 0, 0.7);
 }
-.dhx_popup--window_active{
+
+.dhx_popup--window_active {
    display: block !important;
    position: fixed !important;
    top: 90px !important;
@@ -1231,9 +1232,10 @@ table {
 
 /*↑↑↑resource section↑↑↑*/
 
-.dhx_slider{
+.dhx_slider {
    margin-left: 10px;
 }
+
 .owner-label {
    width: 20px;
    height: 20px;
@@ -1438,5 +1440,22 @@ table {
             margin-right: 10px;
          }
       }
+   }
+
+   thead , .thead {
+      background-color: $darkLight;
+      color: $white;
+   }
+
+   tbody {
+      td {
+         border-left: .5px solid $shadowColor;
+      }
+   }
+   .reporting-tables{
+      @include display(grid,flex-start,space-evenly);
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+      list-style: none;
    }
 }

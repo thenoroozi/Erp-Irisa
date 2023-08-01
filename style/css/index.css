@@ -2097,5 +2097,20 @@ table td {
 .functions-reporting .functions-item-parts-option button:first-child {
   margin-right: 10px;
 }
+.functions-reporting thead, .functions-reporting .thead {
+  background-color: #12181A;
+  color: #fff;
+}
+.functions-reporting tbody td {
+  border-left: 0.5px solid rgba(99, 99, 99, 0.1450980392);
+}
+.functions-reporting .reporting-tables {
+  display: grid;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  list-style: none;
+}
 
 /*# sourceMappingURL=index.css.map */
