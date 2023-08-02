@@ -96,7 +96,9 @@ body {
 }
 .accessList-topic h3 {
   color: #fff;
-  font-size: larger;
+}
+.accessList-topic img {
+  width: 30px;
 }
 .accessList-topic a {
   text-decoration: none;
@@ -113,12 +115,12 @@ body {
   z-index: 2;
   width: fit-content;
   color: white;
-  font-size: 15px;
+  font-size: 13px;
   background-color: #192733;
   border-radius: 10px;
   padding: 10px 15px 10px 15px;
   top: 40px;
-  left: -100%;
+  left: -35px;
 }
 .accessList-topic .tooltip::before {
   content: "";
@@ -998,7 +1000,7 @@ header {
   box-shadow: 4px 4px 8px rgba(99, 99, 99, 0.1450980392);
   border-radius: 0;
   margin: 0 auto;
-  padding: 5px 20px;
+  padding: 2px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1023,7 +1025,7 @@ header {
   margin-left: 70px;
 }
 .search-box img {
-  width: 30px;
+  width: 25px;
   margin: 5px;
 }
 .search-box input {
@@ -1052,7 +1054,7 @@ header {
   align-items: center;
   justify-content: none;
   border-left: 0.5px solid #868686;
-  padding: 8px;
+  padding: 5px 8px;
   margin-left: 10px;
   cursor: pointer;
   width: 190px;
@@ -1062,15 +1064,15 @@ header {
 }
 
 .profile-photo {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   margin-right: 8px;
 }
 
 .userMenu {
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: 0px;
   background: #fff;
   width: 180px;
@@ -1098,10 +1100,11 @@ header {
   background-color: #EFEFEF;
 }
 .userMenu img {
-  width: 25px;
+  width: 20px;
   margin-right: 15px;
 }
 .userMenu a {
+  font-size: 15px;
   text-decoration: none;
   color: #000;
 }
@@ -1124,13 +1127,13 @@ header {
 }
 
 .navbar-left img {
-  width: 30px;
+  width: 25px;
 }
 .navbar-left #circled3 {
   position: absolute;
-  width: 25px;
-  top: -6px;
-  right: -4px;
+  width: 20px;
+  top: -4px;
+  right: -2px;
 }
 .navbar-left .notife-icon {
   position: relative;
@@ -1159,10 +1162,10 @@ header {
 
 .notifeMenu {
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: 195px;
   background: #fff;
-  width: 300px;
+  width: 280px;
   border-radius: 15px;
   display: none;
   transition: all 0.3s ease-in-out;
@@ -1181,13 +1184,13 @@ header {
   text-align: center;
 }
 .notifeMenu .notifeFooter > button {
-  width: 280px;
+  width: 260px;
   padding: 8px;
   border-radius: 12px;
   background-color: #4A00E0;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -1248,10 +1251,10 @@ header {
 
 .favoriteMenu {
   position: absolute;
-  top: 80px;
-  right: 295px;
+  top: 70px;
+  right: 280px;
   background: #fff;
-  width: 300px;
+  width: 280px;
   border-radius: 15px;
   display: none;
   transition: all 0.3s ease-in-out;
@@ -1270,7 +1273,7 @@ header {
   text-align: center;
 }
 .favoriteMenu .favoriteFooter > button {
-  width: 280px;
+  width: 260px;
   padding: 8px;
   border-radius: 12px;
   background-color: #4A00E0;
@@ -1319,7 +1322,8 @@ header {
   color: #878787;
 }
 .favoriteBody li img {
-  width: 50px;
+  width: 40px;
+  margin-right: 5px;
 }
 .favoriteBody li:hover {
   background-color: #EFEFEF;
@@ -1330,8 +1334,8 @@ header {
 
 .main {
   width: calc(100vw - 40px);
-  margin: 20px auto;
-  padding: 20px 10px;
+  margin: 10px auto;
+  padding: 10px 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1340,9 +1344,9 @@ header {
 
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+  margin-bottom: 10px;
 }
 
 .dashboard1 {
@@ -1351,25 +1355,25 @@ header {
 }
 
 .dashboard2 {
-  background: linear-gradient(to left, #FFD100, #F7991D);
-}
-
-.dashboard3 {
-  background: linear-gradient(to left, #FC5B12, rgba(239, 17, 109, 0.6509803922));
+  background: linear-gradient(to left, #FD5E0F, #EF116E);
   color: #fff;
 }
 
-.dashboard4 {
+.dashboard3 {
   background: linear-gradient(to left, #76F01C, #0FB392);
   color: #fff;
 }
 
+.dashboard4 {
+  background: linear-gradient(to left, #FFD100, #F7991D);
+}
+
 .dashboard-card {
-  width: 240px;
+  width: 500px;
   background-color: #4A00E0;
   box-shadow: 4px 4px 8px rgba(99, 99, 99, 0.1450980392);
   border-radius: 12px;
-  height: 130px;
+  height: 110px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1389,7 +1393,7 @@ header {
   box-shadow: 0px 0px 0px rgba(99, 99, 99, 0.1450980392);
   border-radius: 12px;
   height: fit-content;
-  margin-top: 20px;
+  margin-top: 15px;
   position: relative;
   box-shadow: -4px -4px 8px rgba(99, 99, 99, 0.1450980392), 4px 4px 8px rgba(99, 99, 99, 0.1450980392);
 }
@@ -1405,6 +1409,7 @@ header {
 .message-box img,
 .recently-box img {
   cursor: pointer;
+  width: 25px;
 }
 
 .recently-list {
@@ -1493,7 +1498,7 @@ table td {
 
 .functions {
   width: calc(100vw - 40px);
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 10px;
   display: none;
   align-items: center;
@@ -1537,15 +1542,15 @@ table td {
   justify-content: center;
 }
 .create-project select {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
   background-color: #fff;
-  font-size: 18px;
+  font-size: 17px;
 }
 .create-project button {
-  padding: 6px;
+  padding: 5.5px;
   border: none;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -1554,8 +1559,12 @@ table td {
   justify-content: center;
   border-left: 0.5px solid #2F3436;
   background-color: #3a78f5;
-  width: 50px;
+  width: 30px;
   cursor: pointer;
+}
+.create-project button img {
+  width: 25px;
+  margin: 0 5px;
 }
 .create-project button:hover {
   background-color: #0251f0;
@@ -1567,22 +1576,22 @@ table td {
   justify-content: center;
 }
 .show-project select {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
   background-color: #fff;
-  font-size: 18px;
+  font-size: 17px;
 }
 .show-project button {
-  padding: 10px;
+  padding: 8px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   border-left: 0.5px solid #2F3436;
   background-color: #3a78f5;
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
   color: #fff;
 }
@@ -1599,7 +1608,6 @@ table td {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  margin: 0px auto;
 }
 
 .findPage {
@@ -1607,6 +1615,7 @@ table td {
   align-items: center;
   justify-content: space-around;
   width: 450px;
+  margin-right: 10px;
 }
 
 .pagebtn {
@@ -1616,7 +1625,7 @@ table td {
   border-radius: 8px;
   border: none;
   padding: 5px 10px;
-  font-size: 18px;
+  font-size: 17px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -1626,6 +1635,7 @@ table td {
 }
 .pagebtn img {
   margin: 0 5px;
+  width: 25px;
 }
 
 #tables {
@@ -1647,14 +1657,16 @@ table td {
   border-radius: 8px;
   border: none;
   padding: 2px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
+  margin-left: 10px;
 }
 .select-btn img {
-  width: 35px;
+  width: 30px;
 }
 
 .functions-item {
@@ -1792,21 +1804,21 @@ table td {
   justify-content: space-between;
 }
 .functions-item-part-1 select {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 8px;
 }
 .functions-item-part-1 button {
-  padding: 10px;
+  padding: 8px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #3a78f5;
-  font-size: 17px;
+  font-size: 16px;
   cursor: pointer;
   border-left: 0.5px solid #2F3436;
 }
@@ -1831,22 +1843,22 @@ table td {
   justify-content: space-between;
 }
 .functions-item-part-2 select {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 8px;
 }
 .functions-item-part-2 button {
-  padding: 10px;
+  padding: 8px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   border-left: 0.5px solid #2F3436;
   background-color: #3a78f5;
-  font-size: 17px;
+  font-size: 16px;
   cursor: pointer;
 }
 .functions-item-part-2 button:hover {
@@ -2002,13 +2014,13 @@ table td {
 }
 
 .btn {
-  padding: 10px;
+  padding: 8px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #3a78f5;
-  font-size: 17px;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 8px;
   margin-left: 10px;
@@ -2029,21 +2041,21 @@ table td {
   margin: 10px;
 }
 .functions-cotrol .functions-item-parts-option select {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 8px;
 }
 .functions-cotrol .functions-item-parts-option button {
-  padding: 10px;
+  padding: 8px;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #3a78f5;
-  font-size: 17px;
+  font-size: 16px;
   cursor: pointer;
   border-left: 0.5px solid #2F3436;
 }
@@ -2087,17 +2099,18 @@ table td {
   margin: 10px;
 }
 .functions-reporting .functions-item-parts-option select {
-  padding: 10px 12px;
+  padding: 8px 12px;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
   border: none;
-  font-size: 17px;
+  font-size: 16px;
   margin-left: 8px;
 }
 .functions-reporting .functions-item-parts-option button:first-child {
   margin-right: 10px;
 }
-.functions-reporting thead, .functions-reporting .thead {
+.functions-reporting thead,
+.functions-reporting .thead {
   background-color: #12181A;
   color: #fff;
 }
