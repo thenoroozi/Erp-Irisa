@@ -527,7 +527,7 @@
                <div class="findPage">
                   <button class="box-btn2 pagebtn"><img src="./image/icon/double-left.png">Previous</button>
                   <select name="tables" id="tables">
-                     <option value="1">1-25 of 417</option>
+                     <option value="1">1-10 of 100</option>
                   </select>
                   <button class="box-btn2 pagebtn">Next<img src="./image/icon/double-right.png"></button>
                </div>
@@ -1720,14 +1720,12 @@
    gantt.getCalendar("custom").setWorkTime({ date: gantt.date.str_to_date("%d-%m-%Y")("12-04-2025"), hours: ["9:00-18:00"] })
    gantt.getCalendar("custom").setWorkTime({ date: gantt.date.str_to_date("%d-%m-%Y")("14-04-2025"), hours: false })
 
+      // var autoFormatter = gantt.ext.formatters.durationFormatter({
+      //    enter: "day",
+      //    store: "hour",
+      //    format: "auto"
+      // });
 
-   /*
-      var autoFormatter = gantt.ext.formatters.durationFormatter({
-         enter: "day",
-         store: "hour",
-         format: "auto"
-      });
-   */
    gantt.config.columns = [
       { name: "text", tree: true, width: 200, resize: true },
       { name: "start_date", align: "center", width: 80, resize: true },
@@ -2181,11 +2179,6 @@
    initResourceEditForm();
    initLinkEditForm();
    initCalendarEditForm();
-
-   setTimeout(function () {
-      gantt.showLightbox(4)
-   }, 200)
-
 
 </script>
 
