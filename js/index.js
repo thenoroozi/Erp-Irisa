@@ -324,7 +324,7 @@ function openFunctionList(event) {
 function openFunctionListJs() {
    const functionsItem = document.querySelector('.functions-item');
    functionsItem.style.display = "none";
-   
+
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
@@ -400,18 +400,18 @@ function openFunctionItem(event) {
    functions.style.display = "none";
    functionsItem.style.display = "flex";
 
-   const projectSpecifications=document.querySelector(".project-specifications");
-   projectSpecifications.innerHTML=``;
-   let topic=document.querySelector('.project-topic');
-   topic.innerHTML=``;
+   const projectSpecifications = document.querySelector(".project-specifications");
+   projectSpecifications.innerHTML = ``;
+   let topic = document.querySelector('.project-topic');
+   topic.innerHTML = ``;
    let Keys = [];
    for (const x in Disturbution[0]) {
       Keys.push(x);
    }
-   Disturbution.map(project =>{
-      if(project.id==event){
-         topic.innerHTML=`${Keys[1]} : <h3>${project[Keys[1]]}</h3>`;
-         
+   Disturbution.map(project => {
+      if (project.id == event) {
+         topic.innerHTML = `${Keys[1]} : <h3>${project[Keys[1]]}</h3>`;
+
          for (let i = 2; i < Keys.length; i++) {
             let li = document.createElement("li");
             li.innerHTML = `<label>${Keys[i]} : </label>
@@ -422,8 +422,8 @@ function openFunctionItem(event) {
    })
 }
 
-let previousPageClass='';
-let previousPage=document.querySelector(".functions-project");
+let previousPageClass = '';
+let previousPage = document.querySelector(".functions-project");
 
 function openFunctionItemPage(event) {
    const project = document.querySelector('.functions-project');
@@ -436,46 +436,69 @@ function openFunctionItemPage(event) {
 
    switch (event) {
       case 1:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          project.style.display = "block";
-         previousPageClass=project.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = project.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
       case 2:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          resources.style.display = "block";
-         previousPageClass=resources.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = resources.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
       case 3:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          workpkan.style.display = "block";
-         previousPageClass=workpkan.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = workpkan.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
       case 4:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          cotrol.style.display = "block";
-         previousPageClass=cotrol.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = cotrol.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
       case 5:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          financial.style.display = "block";
-         previousPageClass=financial.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = financial.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
       case 6:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          reporting.style.display = "block";
-         previousPageClass=reporting.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = reporting.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
       case 7:
-         previousPage.style.display="none";
+         previousPage.style.display = "none";
          procurement.style.display = "block";
-         previousPageClass=procurement.className;
-         previousPage=document.querySelector(`.${previousPageClass}`);
+         previousPageClass = procurement.className;
+         previousPage = document.querySelector(`.${previousPageClass}`);
          break;
    }
+}
+//pie-chart------------------------------------------------------
+window.onload = function () {
+   var ctx = document.getElementById("pieChart").getContext('2d');
+   var myChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+         labels: ["فولاد", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
+         datasets: [{
+            backgroundColor: [
+               "#2ecc71",
+               "#3498db",
+               "#95a5a6",
+               "#9b59b6",
+               "#f1c40f",
+               "#e74c3c",
+               "#34495e"
+            ],
+            borderWidth: [0, 0, 0, 0, 0, 0, 0],
+            data: [12, 19, 3, 17, 28, 24, 7]
+         }]
+      }
+   });
 }
