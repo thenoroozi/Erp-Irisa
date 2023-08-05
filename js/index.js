@@ -286,40 +286,80 @@ function openFunctionList(event) {
    const functions = document.querySelector('.functions');
    let tHeader = document.querySelector('.theader');
    let tBody = document.querySelector('.functions-tbody');
+
+   const prevButton = document.querySelectorAll(".pagebtn")[0];
+   const nextButton = document.querySelectorAll(".pagebtn")[1];
+
    main.style.display = "none";
    functions.style.display = "flex";
    tHeader.innerHTML = "";
    tBody.innerHTML = "";
 
+   let jsonData = null;
+   let currentPage = 1;
+   let Keys = [];
    fetch(`https://jsonplaceholder.typicode.com/${event}/`)
       .then(response => response.json())
       .then(json => {
-         let Keys = [];
+         jsonData = json;
+         renderTableData(currentPage);
+         updatePaginationButtons();
+
          for (const x in json[0]) {
             Keys.push(x);
          }
-         //table header
-         let tableHeaderTr = `<td>select</td>`;
-         let trHead = document.createElement("tr");
-         for (let i = 1; i < Keys.length; i++) {
-            tableHeaderTr += `<td>${Keys[i]}</td>`;
-         }
-         trHead.innerHTML = tableHeaderTr;
-         tHeader.appendChild(trHead);
-         //table body
-         for (let j = 0; j < json.length; j++) {
-            let trBody = document.createElement("tr");
-            trBody.innerHTML = ``;
-            let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
-            for (let i = 1; i < Keys.length; i++) {
-               tableBodyTr += `<td>${json[j][Keys[i]]}</td>`;
-            }
-            trBody.innerHTML = tableBodyTr;
-            tBody.append(trBody);
-         }
-
       })
+   //table header
+   let tableHeaderTr = `<td>select</td>`;
+   let trHead = document.createElement("tr");
+    Keys.map(item =>{
+      console.log(item);
+    })
+   for (let i = 1; i < Keys.length; i++) {
+      tableHeaderTr += `<td>${Keys[i]}</td>`;
+   }
+   trHead.innerHTML = tableHeaderTr;
+   tHeader.appendChild(trHead);
+   //table body
+   function renderTableData(page) {
+      let trBody = document.createElement("tr");
+      trBody.innerHTML = ``;
+
+      const startIndex = (page - 1) * 10;
+      const endIndex = page * 10;
+
+      for (let i = startIndex; i < endIndex && i < jsonData.length; i++) {
+         let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
+         for (let i = 1; i < Keys.length; i++) {
+            tableBodyTr += `<td>${jsonData[j][Keys[i]]}</td>`;
+         }
+         trBody.innerHTML = tableBodyTr;
+         tBody.append(trBody);
+      }
+   }
+
+   //paging the data -----------------------------
+   function updatePaginationButtons() {
+      prevButton.disabled = (currentPage === 1);
+      nextButton.disabled = (currentPage === (jsonData.length / 10));
+   }
+   prevButton.addEventListener("click", () => {
+      if (!prevButton.disabled) {
+         currentPage--;
+         renderTableData(currentPage);
+         updatePaginationButtons();
+      }
+   });
+
+   nextButton.addEventListener("click", () => {
+      if (!nextButton.disabled) {
+         console.log(currentPage++);
+         renderTableData(currentPage);
+         updatePaginationButtons();
+      }
+   });
 }
+
 
 function openFunctionListJs() {
    const functionsItem = document.querySelector('.functions-item');
