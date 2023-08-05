@@ -1116,6 +1116,17 @@
                <ul class="reporting-tables">
                   <li>
                      <div class="table-titre">
+                        <h3>Pie Chart</h3>
+                        <button class="btn">Export</button>
+                     </div>
+                     <div class="pieChart-container">
+                        <div>
+                           <canvas id="pieChart"></canvas>
+                        </div>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="table-titre">
                         <h3>Effort</h3>
                         <button class="btn">Export</button>
                      </div>
@@ -1581,6 +1592,9 @@
 <script type="text/javascript" src="./js/common/suite_resource_editor.js?v=8.0.3"></script>
 <script src="./js/data.js"></script>
 <script type="text/javascript" src="./js/kanban.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0-rc.1/Chart.js"></script>
 
 <script type="text/javascript">
 
@@ -1720,11 +1734,11 @@
    gantt.getCalendar("custom").setWorkTime({ date: gantt.date.str_to_date("%d-%m-%Y")("12-04-2025"), hours: ["9:00-18:00"] })
    gantt.getCalendar("custom").setWorkTime({ date: gantt.date.str_to_date("%d-%m-%Y")("14-04-2025"), hours: false })
 
-      // var autoFormatter = gantt.ext.formatters.durationFormatter({
-      //    enter: "day",
-      //    store: "hour",
-      //    format: "auto"
-      // });
+   // var autoFormatter = gantt.ext.formatters.durationFormatter({
+   //    enter: "day",
+   //    store: "hour",
+   //    format: "auto"
+   // });
 
    gantt.config.columns = [
       { name: "text", tree: true, width: 200, resize: true },
