@@ -1017,7 +1017,9 @@ table {
       width: 25px;
    }
 }
-
+.pagebtn.disabled{
+   background-color: $blueButton;
+}
 #tables {
    @include box(50%, $backgroundGray2, 1px, $shadowColor, 8px);
    margin: 0 10px;
