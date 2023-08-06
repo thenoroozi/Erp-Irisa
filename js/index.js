@@ -279,6 +279,8 @@ function steadyAccessList() {
 }
 //building the function lists table
 function openFunctionList(event) {
+   removeSelect();
+
    const functionsItem = document.querySelector('.functions-item');
    functionsItem.style.display = "none";
 
@@ -294,7 +296,7 @@ function openFunctionList(event) {
    functions.style.display = "flex";
    tHeader.innerHTML = "";
 
-   let jsonData = null;
+   let jsonData = ``;
    let currentPage = 1;
    let Keys = [];
    fetch(`https://jsonplaceholder.typicode.com/${event}/`)
@@ -318,13 +320,12 @@ function openFunctionList(event) {
          renderTableData(currentPage);
          updatePaginationButtons();
       })
-
-   //table body
-   function renderTableData(page) {
+      //table body
+      function renderTableData(page) {
+      console.log(jsonData);
       const startIndex = (page - 1) * 10;
       const endIndex = page * 10;
       tBody.innerHTML=``;
-      console.log(jsonData);
       for (let j = startIndex; j < endIndex && j < jsonData.length; j++) {
          let trBody = document.createElement("tr");
          trBody.innerHTML = ``;
@@ -357,6 +358,7 @@ function openFunctionList(event) {
          currentPage--;
          renderTableData(currentPage);
          updatePaginationButtons();
+         removeSelect();
       }
    });
 
@@ -365,12 +367,27 @@ function openFunctionList(event) {
          currentPage++;
          renderTableData(currentPage);
          updatePaginationButtons();
+         removeSelect();
       }
    });
+
+   function removeSelect(){
+      const selectAll = document.querySelector(".select-btn").childNodes[0];
+      const tr = document.getElementsByName("checkbox");
+   
+      if (selectAll.src.indexOf("select-none-30.png") == -1) {
+         document.querySelector(".select-btn").childNodes[0].src = './image/icon/select-none-30.png';
+         for (let i = 0; i < tr.length; i++) {
+            tr[i].checked = false;
+         }
+      }
+   }
 }
 
 
 function openFunctionListJs() {
+   removeSelect();
+
    const functionsItem = document.querySelector('.functions-item');
    functionsItem.style.display = "none";
 
