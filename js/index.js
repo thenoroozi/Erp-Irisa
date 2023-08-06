@@ -293,7 +293,6 @@ function openFunctionList(event) {
    main.style.display = "none";
    functions.style.display = "flex";
    tHeader.innerHTML = "";
-   tBody.innerHTML = "";
 
    let jsonData = null;
    let currentPage = 1;
@@ -302,33 +301,33 @@ function openFunctionList(event) {
       .then(response => response.json())
       .then(json => {
          jsonData = json;
-         renderTableData(currentPage);
-         updatePaginationButtons();
-
+         
          for (const x in json[0]) {
             Keys.push(x);
          }
+         //table header
+         let tableHeaderTr = `<td>select</td>`;
+         let trHead = document.createElement("tr");
+
+         for (let i = 1; i < Keys.length; i++) {
+            tableHeaderTr += `<td>${Keys[i]}</td>`;
+         }
+         trHead.innerHTML = tableHeaderTr;
+         tHeader.appendChild(trHead);
+
+         renderTableData(currentPage);
+         updatePaginationButtons();
       })
-   //table header
-   let tableHeaderTr = `<td>select</td>`;
-   let trHead = document.createElement("tr");
-    Keys.map(item =>{
-      console.log(item);
-    })
-   for (let i = 1; i < Keys.length; i++) {
-      tableHeaderTr += `<td>${Keys[i]}</td>`;
-   }
-   trHead.innerHTML = tableHeaderTr;
-   tHeader.appendChild(trHead);
+
    //table body
    function renderTableData(page) {
-      let trBody = document.createElement("tr");
-      trBody.innerHTML = ``;
-
       const startIndex = (page - 1) * 10;
       const endIndex = page * 10;
-
-      for (let i = startIndex; i < endIndex && i < jsonData.length; i++) {
+      tBody.innerHTML=``;
+      console.log(jsonData);
+      for (let j = startIndex; j < endIndex && j < jsonData.length; j++) {
+         let trBody = document.createElement("tr");
+         trBody.innerHTML = ``;
          let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
          for (let i = 1; i < Keys.length; i++) {
             tableBodyTr += `<td>${jsonData[j][Keys[i]]}</td>`;
@@ -341,7 +340,17 @@ function openFunctionList(event) {
    //paging the data -----------------------------
    function updatePaginationButtons() {
       prevButton.disabled = (currentPage === 1);
+      if(prevButton.disabled){
+         prevButton.classList.add('disabled');
+      }else{
+         prevButton.classList.remove('disabled');
+      }
       nextButton.disabled = (currentPage === (jsonData.length / 10));
+      if(nextButton.disabled){
+         nextButton.classList.add('disabled');
+      }else{
+         nextButton.classList.remove('disabled');
+      }
    }
    prevButton.addEventListener("click", () => {
       if (!prevButton.disabled) {
@@ -353,7 +362,7 @@ function openFunctionList(event) {
 
    nextButton.addEventListener("click", () => {
       if (!nextButton.disabled) {
-         console.log(currentPage++);
+         currentPage++;
          renderTableData(currentPage);
          updatePaginationButtons();
       }
