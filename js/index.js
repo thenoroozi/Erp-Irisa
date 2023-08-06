@@ -319,10 +319,10 @@ function openFunctionList(event) {
 
          renderTableData(currentPage);
          updatePaginationButtons();
+         updatePaginationSelects();
       })
       //table body
       function renderTableData(page) {
-      console.log(jsonData);
       const startIndex = (page - 1) * 10;
       const endIndex = page * 10;
       tBody.innerHTML=``;
@@ -370,6 +370,19 @@ function openFunctionList(event) {
          removeSelect();
       }
    });
+   let selections=document.getElementById("findPage-tables");
+   function updatePaginationSelects(){
+      selections.innerHTML=``;
+      let totalPages=jsonData.length /10;
+      for (let i = 1; i <= totalPages; i++) {
+         const startIndex = (i - 1) * 10;
+         const endIndex = i * 10;
+         selections.innerHTML+=`<option value="${i}">${startIndex+1}-${endIndex} of ${jsonData.length}</option>`;
+      }
+   }
+   selections.addEventListener("click",()=>{
+      renderTableData(selections.value);
+   })
 }
 
 
