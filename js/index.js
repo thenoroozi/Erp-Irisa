@@ -370,18 +370,6 @@ function openFunctionList(event) {
          removeSelect();
       }
    });
-
-   function removeSelect(){
-      const selectAll = document.querySelector(".select-btn").childNodes[0];
-      const tr = document.getElementsByName("checkbox");
-   
-      if (selectAll.src.indexOf("select-none-30.png") == -1) {
-         document.querySelector(".select-btn").childNodes[0].src = './image/icon/select-none-30.png';
-         for (let i = 0; i < tr.length; i++) {
-            tr[i].checked = false;
-         }
-      }
-   }
 }
 
 
@@ -441,6 +429,17 @@ function changeSelect() {
          tr[i].checked = true;
       }
    } else {
+      document.querySelector(".select-btn").childNodes[0].src = './image/icon/select-none-30.png';
+      for (let i = 0; i < tr.length; i++) {
+         tr[i].checked = false;
+      }
+   }
+}
+function removeSelect(){
+   const selectAll = document.querySelector(".select-btn").childNodes[0];
+   const tr = document.getElementsByName("checkbox");
+
+   if (selectAll.src.indexOf("select-none-30.png") == -1) {
       document.querySelector(".select-btn").childNodes[0].src = './image/icon/select-none-30.png';
       for (let i = 0; i < tr.length; i++) {
          tr[i].checked = false;
