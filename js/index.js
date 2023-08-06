@@ -359,6 +359,7 @@ function openFunctionList(event) {
          renderTableData(currentPage);
          updatePaginationButtons();
          removeSelect();
+         selections.value=currentPage;
       }
    });
 
@@ -368,9 +369,12 @@ function openFunctionList(event) {
          renderTableData(currentPage);
          updatePaginationButtons();
          removeSelect();
+         selections.value=currentPage;
       }
    });
+
    let selections=document.getElementById("findPage-tables");
+   
    function updatePaginationSelects(){
       selections.innerHTML=``;
       let totalPages=jsonData.length /10;
@@ -381,7 +385,10 @@ function openFunctionList(event) {
       }
    }
    selections.addEventListener("click",()=>{
-      renderTableData(selections.value);
+      currentPage=selections.value;
+      renderTableData(currentPage);
+      updatePaginationButtons();
+      removeSelect();
    })
 }
 
