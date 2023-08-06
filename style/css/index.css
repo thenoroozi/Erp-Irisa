@@ -1638,6 +1638,11 @@ table td {
   width: 25px;
 }
 
+.pagebtn.disabled {
+  background-color: #3a78f5;
+  color: #2F3436;
+}
+
 #tables {
   width: 50%;
   background-color: #EFEFEF;
@@ -2124,6 +2129,11 @@ table td {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   list-style: none;
+}
+
+.pieChart-container {
+  width: 400px;
+  margin: 15px auto;
 }
 
 /*# sourceMappingURL=index.css.map */

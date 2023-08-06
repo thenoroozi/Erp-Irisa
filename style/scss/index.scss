@@ -1019,6 +1019,7 @@ table {
 }
 .pagebtn.disabled{
    background-color: $blueButton;
+   color: $hoverList;
 }
 #tables {
    @include box(50%, $backgroundGray2, 1px, $shadowColor, 8px);
