@@ -16,7 +16,7 @@ body {
    width: calc(300px - 16px);
    height: 100vh;
    background-color: $darkLight;
-   left: -220px;
+   left: -230px;
    top: 0;
    transition: all .3s ease;
    padding: 5px 8px 8px 8px;
@@ -84,6 +84,12 @@ body {
 
 }
 
+.logo {
+   background-image: url(../../image/irisa.png);
+   background-size: cover;
+   width: 50px;
+   height: 50px;
+}
 .accessList-topic {
    @include display(none, center, space-around);
    background-color: $hoverList;
@@ -378,13 +384,6 @@ header {
    position: relative;
 }
 
-.logo {
-   background-image: url(../../image/irisa.png);
-   background-size: cover;
-   width: 70px;
-   height: 70px;
-}
-
 .search-box {
    @include box(300px, $backgroundGray2, 0, $shadowColor, 8px);
    @include display(flex, center, flex-start);
@@ -420,10 +419,13 @@ header {
    padding: 5px 8px;
    margin-left: 10px;
    cursor: pointer;
-   width: 190px;
+   width: fit-content;
 
-   h4 {
+   h5 {
       margin-bottom: 5px;
+   }
+   h6{
+      color: $fontGary;
    }
 }
 
@@ -728,17 +730,19 @@ header {
 //start body-------------------------------------------------------
 ///start .main--------------------------------------
 .main {
-   width: calc(100vw - 40px);
+   width: calc(100vw - 115px);
    margin: 10px auto;
-   padding: 10px 10px;
+   padding: 10px 10px 10px 85px;
    @include display(flex, center, center);
    flex-direction: column;
 }
 
 .dashboard {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   gap: 20px 30px;
+   width: 100%;
+   @include display(flex,center,center);
+   flex-wrap: wrap;
+   margin: 0 auto;
+   gap: 10px 20px;
    margin-bottom: 10px;
 }
 
@@ -769,16 +773,12 @@ header {
    padding: 0 15px;
 
    span {
-      margin-bottom: 8px;
-   }
-
-   h3 {
-      margin-bottom: 8px;
+      margin: 8px 0;
    }
 }
 
 .box {
-   @include box(1100px, $white, 0px, $shadowColor, 12px);
+   @include box(100%, $white, 0px, $shadowColor, 12px);
    height: fit-content;
    margin-top: 15px;
    position: relative;
@@ -791,7 +791,6 @@ header {
    @include display(flex, center, space-between);
    border-bottom: 0.3px solid $hoverList;
    padding: 5px 15px;
-
    img {
       cursor: pointer;
       width: 25px;
@@ -889,9 +888,9 @@ table {
 
 //start functions(table of list)------------------------------------------------
 .functions {
-   width: calc(100vw - 40px);
-   margin: 0px auto;
-   padding: 10px;
+   width: calc(100vw - 115px);
+   margin: 10px auto;
+   padding: 10px 10px 10px 85px;
    @include display(none, center, center);
    flex-direction: column;
 }
@@ -900,7 +899,7 @@ table {
    @include display(flex, flex-start, space-between);
    flex-direction: column;
    padding: 5px 15px;
-
+   width: calc(100% - 30px);
    #direct-show-icon {
       width: 20px;
    }
@@ -910,6 +909,7 @@ table {
    @include display(flex, center, space-between);
    padding: 8px;
    background-color: $darkLight;
+   width: calc(100% - 16px);
 }
 
 .direct-show {
@@ -1018,7 +1018,7 @@ table {
    }
 }
 .pagebtn.disabled{
-   background-color: $blueButton;
+   background-color: $line;
    color: $hoverList;
 }
 #findPage-tables {
@@ -1047,12 +1047,10 @@ table {
 
 //start functions item (Gantt)----------------------------------------------
 .functions-item {
-   width: calc(100vw - 40px);
-   height: fit-content;
+   width: calc(100vw - 115px);
    margin: 10px auto;
-   padding: 10px;
-   @include display(none, center, center);
-   flex-direction: column;
+   padding: 10px 10px 10px 85px;
+   height: fit-content;
 }
 
 .functions-project {
