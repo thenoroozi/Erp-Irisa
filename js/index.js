@@ -252,10 +252,8 @@ function openBoxOption(event) {
 function steadyAccessList() {
    const body = document.querySelector('#body');
    const dashboardCard = document.querySelectorAll('.dashboard-card');
-   const box = document.querySelectorAll('.box');
    const main = document.querySelector('.main');
    const functions = document.querySelector('.functions');
-   const dashboard = document.querySelector('.dashboard');
    const accessMenu = document.querySelector('.accessMenu');
    const steadyIcon = document.querySelector('.steady-icon');
    const accessListTopic = document.querySelector('.accessList-topic');
@@ -266,11 +264,7 @@ function steadyAccessList() {
       dashboardCard[i].classList.toggle('steady');
 
    }
-   for (let i = 0; i < box.length; i++) {
-      box[i].classList.toggle('steady');
-   }
    main.classList.toggle('steady');
-   dashboard.classList.toggle('steady');
    accessMenu.classList.toggle('steady');
    steadyIcon.classList.toggle('steady');
    functions.classList.toggle('steady');
@@ -301,10 +295,9 @@ function openFunctionList(event) {
    let Keys = [];
    fetch(`https://jsonplaceholder.typicode.com/${event}/`)
       .then(response => response.json())
-      .then(json => {
-         jsonData = json;
-         
-         for (const x in json[0]) {
+      .then(response => {
+         jsonData = response;
+         for (const x in jsonData[0]) {
             Keys.push(x);
          }
          //table header
@@ -321,17 +314,17 @@ function openFunctionList(event) {
          updatePaginationButtons();
          updatePaginationSelects();
       })
-      //table body
-      function renderTableData(page) {
+   //table body
+   function renderTableData(page) {
       const startIndex = (page - 1) * 10;
       const endIndex = page * 10;
-      tBody.innerHTML=``;
+      tBody.innerHTML = ``;
       for (let j = startIndex; j < endIndex && j < jsonData.length; j++) {
          let trBody = document.createElement("tr");
          trBody.innerHTML = ``;
          let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
          for (let i = 1; i < Keys.length; i++) {
-            tableBodyTr += `<td>${jsonData[j][Keys[i]]}</td>`;
+           tableBodyTr += `<td>${jsonData[j][Keys[i]]}</td>`;
          }
          trBody.innerHTML = tableBodyTr;
          tBody.append(trBody);
@@ -341,15 +334,15 @@ function openFunctionList(event) {
    //paging the data -----------------------------
    function updatePaginationButtons() {
       prevButton.disabled = (currentPage === 1);
-      if(prevButton.disabled){
+      if (prevButton.disabled) {
          prevButton.classList.add('disabled');
-      }else{
+      } else {
          prevButton.classList.remove('disabled');
       }
       nextButton.disabled = (currentPage === (jsonData.length / 10));
-      if(nextButton.disabled){
+      if (nextButton.disabled) {
          nextButton.classList.add('disabled');
-      }else{
+      } else {
          nextButton.classList.remove('disabled');
       }
    }
@@ -359,7 +352,7 @@ function openFunctionList(event) {
          renderTableData(currentPage);
          updatePaginationButtons();
          removeSelect();
-         selections.value=currentPage;
+         selections.value = currentPage;
       }
    });
 
@@ -369,23 +362,23 @@ function openFunctionList(event) {
          renderTableData(currentPage);
          updatePaginationButtons();
          removeSelect();
-         selections.value=currentPage;
+         selections.value = currentPage;
       }
    });
 
-   let selections=document.getElementById("findPage-tables");
-   
-   function updatePaginationSelects(){
-      selections.innerHTML=``;
-      let totalPages=jsonData.length /10;
+   let selections = document.getElementById("findPage-tables");
+
+   function updatePaginationSelects() {
+      selections.innerHTML = ``;
+      let totalPages = jsonData.length / 10;
       for (let i = 1; i <= totalPages; i++) {
          const startIndex = (i - 1) * 10;
          const endIndex = i * 10;
-         selections.innerHTML+=`<option value="${i}">${startIndex+1}-${endIndex} of ${jsonData.length}</option>`;
+         selections.innerHTML += `<option value="${i}">${startIndex+1}-${endIndex} of ${jsonData.length}</option>`;
       }
    }
-   selections.addEventListener("click",()=>{
-      currentPage=selections.value;
+   selections.addEventListener("click", () => {
+      currentPage = (+selections.value);
       renderTableData(currentPage);
       updatePaginationButtons();
       removeSelect();
@@ -455,7 +448,8 @@ function changeSelect() {
       }
    }
 }
-function removeSelect(){
+
+function removeSelect() {
    const selectAll = document.querySelector(".select-btn").childNodes[0];
    const tr = document.getElementsByName("checkbox");
 

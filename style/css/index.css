@@ -944,22 +944,12 @@ body {
   display: flex;
 }
 
-.box.steady {
-  width: calc(100% - 90px);
-  margin-left: 80px;
-}
-
 .main.steady {
-  width: calc(100vw - 270px);
+  width: calc(100% - 95px);
 }
 
 .functions.steady {
-  width: calc(100vw - 270px);
-}
-
-.dashboard.steady {
-  width: calc(100% - 100px);
-  margin-left: 70px;
+  width: calc(100% - 95px);
 }
 
 .accessMenu.steady {
@@ -998,7 +988,7 @@ body {
 }
 
 .functions-item.steady {
-  width: calc(100vw - 270px);
+  width: calc(100% - 95px);
 }
 
 header {
@@ -1076,9 +1066,9 @@ header {
 .userMenu {
   position: absolute;
   top: 70px;
-  right: 0px;
+  right: -10px;
   background: #fff;
-  width: 180px;
+  width: 160px;
   border-radius: 15px;
   display: none;
   transition: all 0.3s ease-in-out;
@@ -1166,7 +1156,7 @@ header {
 .notifeMenu {
   position: absolute;
   top: 70px;
-  right: 195px;
+  right: 160px;
   background: #fff;
   width: 280px;
   border-radius: 15px;
@@ -1244,7 +1234,7 @@ header {
   content: "";
   position: absolute;
   top: -12px;
-  right: 30px;
+  right: 25px;
   width: 25px;
   height: 25px;
   background: #fff;
@@ -1255,7 +1245,7 @@ header {
 .favoriteMenu {
   position: absolute;
   top: 70px;
-  right: 280px;
+  right: 250px;
   background: #fff;
   width: 280px;
   border-radius: 15px;
@@ -1295,7 +1285,7 @@ header {
   content: "";
   position: absolute;
   top: -12px;
-  right: 30px;
+  right: 25px;
   width: 25px;
   height: 25px;
   background: #fff;
@@ -1347,10 +1337,11 @@ header {
 
 .dashboard {
   width: 100%;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
   margin: 0 auto;
   gap: 10px 20px;
   margin-bottom: 10px;
@@ -1376,7 +1367,7 @@ header {
 }
 
 .dashboard-card {
-  width: 500px;
+  width: 550px;
   background-color: #4A00E0;
   box-shadow: 4px 4px 8px rgba(99, 99, 99, 0.1450980392);
   border-radius: 12px;
@@ -1685,6 +1676,7 @@ table td {
   margin: 10px auto;
   padding: 10px 10px 10px 85px;
   height: fit-content;
+  display: none;
 }
 
 .functions-project {
