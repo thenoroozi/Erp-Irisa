@@ -32,7 +32,7 @@ body {
   color: #fff;
   margin-bottom: 10px;
 }
-.accessMenu .logoName h3 {
+.accessMenu .logoName h4 {
   display: none;
 }
 .accessMenu .logoName .steady-icon {
@@ -61,7 +61,7 @@ body {
   align-items: center;
   justify-content: space-around;
 }
-.accessMenu:hover .logoName h3 {
+.accessMenu:hover .logoName h4 {
   display: block;
 }
 .accessMenu:hover .logoName .steady-icon {
@@ -960,7 +960,7 @@ body {
   align-items: center;
   justify-content: space-around;
 }
-.accessMenu.steady .logoName h3 {
+.accessMenu.steady .logoName h4 {
   display: block;
 }
 .accessMenu.steady .logoName .steady-icon {
@@ -1779,10 +1779,10 @@ table td {
   border-bottom-left-radius: 8px;
   border: none;
   background-color: #fff;
-  font-size: 17px;
+  font-size: 15px;
 }
 .create-project button {
-  padding: 5.5px;
+  padding: 4.5px;
   border: none;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -1813,7 +1813,7 @@ table td {
   border-bottom-left-radius: 8px;
   border: none;
   background-color: #fff;
-  font-size: 17px;
+  font-size: 15px;
 }
 .show-project button {
   padding: 8px;
@@ -1823,7 +1823,7 @@ table td {
   justify-content: center;
   border-left: 0.5px solid #2F3436;
   background-color: #3a78f5;
-  font-size: 17px;
+  font-size: 16px;
   cursor: pointer;
   color: #fff;
 }
@@ -1857,7 +1857,7 @@ table td {
   border-radius: 8px;
   border: none;
   padding: 5px 10px;
-  font-size: 17px;
+  font-size: 16px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -1867,7 +1867,7 @@ table td {
 }
 .pagebtn img {
   margin: 0 5px;
-  width: 25px;
+  width: 20px;
 }
 
 .pagebtn.disabled {
@@ -1942,7 +1942,7 @@ table td {
 }
 .functions-item-mainMenu ul li {
   margin-left: 15px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .functions-item-mainMenu-titre1 {
@@ -2023,6 +2023,7 @@ table td {
 .functions-item-subMenu a {
   text-decoration: none;
   color: #000;
+  font-size: 15px;
 }
 
 .functions-item-part-1 {
@@ -2234,6 +2235,7 @@ table td {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  font-size: 15px;
 }
 .project-specifications li span {
   margin-left: 15px;
@@ -2254,7 +2256,7 @@ table td {
   align-items: center;
   justify-content: center;
   background-color: #3a78f5;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   border-radius: 8px;
   margin-left: 10px;
