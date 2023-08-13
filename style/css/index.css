@@ -1175,9 +1175,13 @@ header {
   width: 100%;
 }
 .hambugerMenu-notification > ul {
-  height: 400px;
+  height: 450px;
   list-style: none;
   overflow-y: scroll;
+  scrollbar-width: none;
+}
+.hambugerMenu-notification > ul::-webkit-scrollbar {
+  display: none;
 }
 .hambugerMenu-notification li > a {
   border-bottom: 0.3px solid #EFEFEF;
@@ -1212,9 +1216,13 @@ header {
   width: 100%;
 }
 .hambugerMenu-favorite > ul {
-  height: 400px;
+  height: 450px;
   list-style: none;
   overflow-y: scroll;
+  scrollbar-width: none;
+}
+.hambugerMenu-favorite > ul::-webkit-scrollbar {
+  display: none;
 }
 .hambugerMenu-favorite li > a {
   border-bottom: 0.3px solid #EFEFEF;
@@ -1614,7 +1622,11 @@ header {
   margin-top: 15px;
   position: relative;
   box-shadow: -4px -4px 8px rgba(99, 99, 99, 0.1450980392), 4px 4px 8px rgba(99, 99, 99, 0.1450980392);
-  overflow: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.box::-webkit-scrollbar {
+  display: none;
 }
 
 .message-box,
@@ -1694,9 +1706,8 @@ table {
   width: calc(100% - 20px);
   margin: 20px auto;
   border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 10px;
   font-size: 15px;
+  border-radius: 10px;
 }
 table .theader,
 table .table-header {

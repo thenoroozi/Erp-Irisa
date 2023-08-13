@@ -393,24 +393,29 @@ header {
       width: 250px;
    }
 }
+
 //start hambuger menu----------------------
-.hambugerMenu-icon{
+.hambugerMenu-icon {
    cursor: pointer;
    padding: 5px;
    display: none;
-   img{
+
+   img {
       padding: 5px;
       width: 30px;
-      &:hover{
+
+      &:hover {
          background-color: $shadowColor;
          border-radius: 50%;
       }
    }
-   @include media(M){
+
+   @include media(M) {
       display: block;
    }
 }
-.hambugerMenu{
+
+.hambugerMenu {
    width: calc(250px - 20px);
    right: -250px;
    background-color: $white;
@@ -430,29 +435,36 @@ header {
 
 
 }
-.hambugerMenu.active{
+
+.hambugerMenu.active {
    right: 0;
 }
-.hambugerMenu-header{
-   @include display(flex,center,center);
-   #close-btn{
+
+.hambugerMenu-header {
+   @include display(flex, center, center);
+
+   #close-btn {
       padding: 5px;
       width: 30px;
       cursor: pointer;
-      &:hover{
+
+      &:hover {
          background-color: $shadowColor;
          border-radius: 50%;
       }
    }
 }
-.hambugerMenu-profile{
+
+.hambugerMenu-profile {
    @include display(flex, center, none);
    padding: 5px 8px;
    margin-left: 10px;
    width: fit-content;
-   img{
+
+   img {
       margin-left: 10px;
    }
+
    h5 {
       margin-bottom: 5px;
    }
@@ -461,27 +473,31 @@ header {
       color: $fontGary;
    }
 }
-.hambugerMenu-home-Icon{
+
+.hambugerMenu-home-Icon {
    width: calc(100% - 16px);
    background-color: $shadowColor;
-   @include display(flex,center,center);
+   @include display(flex, center, center);
    padding: 8px;
    border-radius: 8px;
    margin-top: 8px;
    cursor: pointer;
 }
-.hambugerMenu-navbar{
+
+.hambugerMenu-navbar {
    margin-top: 8px;
    width: 100%;
    border-bottom: .5px solid $line;
-   @include display(flex,center,space-evenly);
+   @include display(flex, center, space-evenly);
    position: relative;
-   img{
+
+   img {
       width: 30px;
       margin: 8px 0;
       cursor: pointer;
    }
-   #borderBottom{
+
+   #borderBottom {
       content: '';
       display: block;
       position: absolute;
@@ -494,18 +510,19 @@ header {
    }
 }
 
-.hambugerMenu-user{
+.hambugerMenu-user {
    margin-top: 8px;
    text-align: right;
+
    ul {
       width: 100%;
       list-style: none;
       padding: 0 8px;
       box-sizing: border-box;
    }
-   
+
    li {
-      @include display(flex,center,flex-end);
+      @include display(flex, center, flex-end);
       padding: 10px 8px;
       border-radius: 12px;
       cursor: pointer;
@@ -526,50 +543,65 @@ header {
       color: #000;
    }
 }
-.hambugerMenu-notification{
-      display: none;
-      width: 100%;
-      >ul {
-         height: 400px;
-         list-style: none;
-         overflow-y: scroll;
-      }
-      
-      li>a {
-         border-bottom: .3px solid $backgroundGray2;
-         padding: 8px;
-         @include display(flex, center, flex-start);
-         text-decoration: none;
-         color: $fontGary;
-         
-         div>div {
-            @include display(flex, flex-start, center);
-            flex-direction: column;
-            margin-bottom: 8px;
-   
-            h5 {
-               font-size: .8rem;
-               color: $black;
-            }
-         }
-      }
-   
-      li {
-         &:hover {
-            background-color: $backgroundGray2;
-         }
-      }
-}
-.hambugerMenu-notification.active{
-   display: block;
-}
-.hambugerMenu-favorite {
+
+.hambugerMenu-notification {
    display: none;
-    width: 100%;
+   width: 100%;
+
    >ul {
-      height: 400px;
+      height: 450px;
       list-style: none;
       overflow-y: scroll;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
+   }
+
+   li>a {
+      border-bottom: .3px solid $backgroundGray2;
+      padding: 8px;
+      @include display(flex, center, flex-start);
+      text-decoration: none;
+      color: $fontGary;
+
+      div>div {
+         @include display(flex, flex-start, center);
+         flex-direction: column;
+         margin-bottom: 8px;
+
+         h5 {
+            font-size: .8rem;
+            color: $black;
+         }
+      }
+   }
+
+   li {
+      &:hover {
+         background-color: $backgroundGray2;
+      }
+   }
+}
+
+.hambugerMenu-notification.active {
+   display: block;
+}
+
+.hambugerMenu-favorite {
+   display: none;
+   width: 100%;
+
+   >ul {
+      height: 450px;
+      list-style: none;
+      overflow-y: scroll;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
    }
 
    li {
@@ -597,9 +629,11 @@ header {
       }
    }
 }
-.hambugerMenu-favorite.active{
+
+.hambugerMenu-favorite.active {
    display: block;
 }
+
 //end hambuger menu-----------------------
 
 .navbarMain {
@@ -609,8 +643,9 @@ header {
    .navbar {
       @include display(flex, center, none);
    }
-   @include media(M){
-    display: none;
+
+   @include media(M) {
+      display: none;
    }
 }
 
@@ -947,8 +982,9 @@ header {
    margin: 0 auto;
    gap: 10px 20px;
    margin-bottom: 10px;
-   @include media(M){
-      grid-template-columns: repeat(1,1fr);
+
+   @include media(M) {
+      grid-template-columns: repeat(1, 1fr);
    }
 }
 
@@ -990,7 +1026,12 @@ header {
    position: relative;
    box-shadow: -4px -4px 8px $shadowColor,
       4px 4px 8px $shadowColor;
-   overflow: hidden;
+   overflow-x: scroll;
+   scrollbar-width: none;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
 }
 
 .message-box,
@@ -1067,9 +1108,8 @@ table {
    width: calc(100% - 20px);
    margin: 20px auto;
    border-collapse: collapse;
-   overflow: hidden;
-   border-radius: 10px;
    font-size: 15px;
+   border-radius: 10px;
 
    .theader,
    .table-header {
@@ -1263,6 +1303,7 @@ table {
    padding: 10px 10px 10px 85px;
    height: fit-content;
    display: none;
+
 }
 
 .functions-project {
@@ -1284,7 +1325,6 @@ table {
    background-color: $darkLight;
    border-radius: 12px 12px 0 0;
    margin-bottom: 10px;
-
    ul {
       @include display(flex, center, center);
       list-style: none;
