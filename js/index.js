@@ -324,7 +324,7 @@ function openFunctionList(event) {
          trBody.innerHTML = ``;
          let tableBodyTr = `<td><input type="checkbox" name="checkbox"></td>`;
          for (let i = 1; i < Keys.length; i++) {
-           tableBodyTr += `<td>${jsonData[j][Keys[i]]}</td>`;
+            tableBodyTr += `<td>${jsonData[j][Keys[i]]}</td>`;
          }
          trBody.innerHTML = tableBodyTr;
          tBody.append(trBody);
@@ -580,4 +580,32 @@ window.onload = function () {
          }]
       }
    });
+}
+//open Hambuger Menu---------------------------------------------------
+function HambugerMenu() {
+   const HambugerMenu = document.querySelector('.hambugerMenu');
+   HambugerMenu.classList.toggle('active');
+}
+//change hamebuger menu body-------------------------------------
+function changeHambugerMenuBody(key) {
+   const hambugerMenukUser=document.querySelector('.hambugerMenu-user');
+   const hambugerMenukNotification=document.querySelector('.hambugerMenu-notification');
+   const hambugerMenukFavorite=document.querySelector('.hambugerMenu-favorite');
+   switch (key) {
+      case 1:
+         hambugerMenukUser.style.display="block";
+         hambugerMenukNotification.classList.remove('active');
+         hambugerMenukFavorite.classList.remove('active');
+         break;
+      case 2:
+         hambugerMenukUser.style.display="none";
+         hambugerMenukNotification.classList.add('active');
+         hambugerMenukFavorite.classList.remove('active');
+         break;
+      case 3:
+         hambugerMenukUser.style.display="none";
+         hambugerMenukNotification.classList.remove('active');
+         hambugerMenukFavorite.classList.add('active');
+         break;
+   }
 }
