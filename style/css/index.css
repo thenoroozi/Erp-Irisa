@@ -1571,6 +1571,11 @@ header {
   gap: 10px 20px;
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .dashboard1 {
   background: linear-gradient(to left, rgba(141, 45, 226, 0.7333333333), #4A00E0);
