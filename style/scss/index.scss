@@ -90,6 +90,7 @@ body {
    width: 50px;
    height: 50px;
 }
+
 .accessList-topic {
    @include display(none, center, space-around);
    background-color: $hoverList;
@@ -309,6 +310,7 @@ body {
    width: calc(100% - 230px);
    margin-left: 230px;
 }
+
 .dashboard-card.steady {
    width: calc(100% - 30px);
 }
@@ -391,6 +393,221 @@ header {
       width: 250px;
    }
 }
+//start hambuger menu----------------------
+.hambugerMenu-icon{
+   cursor: pointer;
+   padding: 5px;
+   display: none;
+   img{
+      padding: 5px;
+      width: 30px;
+      &:hover{
+         background-color: $shadowColor;
+         border-radius: 50%;
+      }
+   }
+   @include media(M){
+      display: block;
+   }
+}
+.hambugerMenu{
+   width: calc(250px - 20px);
+   right: -250px;
+   background-color: $white;
+   z-index: 10;
+   padding: 15px 10px 15px;
+   height: 100vh;
+   position: fixed;
+   top: 0;
+   transition: all .3s ease;
+   position: fixed;
+   overflow-y: scroll;
+   scrollbar-width: none;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
+
+}
+.hambugerMenu.active{
+   right: 0;
+}
+.hambugerMenu-header{
+   @include display(flex,center,center);
+   #close-btn{
+      padding: 5px;
+      width: 30px;
+      cursor: pointer;
+      &:hover{
+         background-color: $shadowColor;
+         border-radius: 50%;
+      }
+   }
+}
+.hambugerMenu-profile{
+   @include display(flex, center, none);
+   padding: 5px 8px;
+   margin-left: 10px;
+   width: fit-content;
+   img{
+      margin-left: 10px;
+   }
+   h5 {
+      margin-bottom: 5px;
+   }
+
+   h6 {
+      color: $fontGary;
+   }
+}
+.hambugerMenu-home-Icon{
+   width: calc(100% - 16px);
+   background-color: $shadowColor;
+   @include display(flex,center,center);
+   padding: 8px;
+   border-radius: 8px;
+   margin-top: 8px;
+   cursor: pointer;
+}
+.hambugerMenu-navbar{
+   margin-top: 8px;
+   width: 100%;
+   border-bottom: .5px solid $line;
+   @include display(flex,center,space-evenly);
+   position: relative;
+   img{
+      width: 30px;
+      margin: 8px 0;
+      cursor: pointer;
+   }
+}
+.hambugerMenu-navbar::before{
+   content: '';
+   display: block;
+   position: absolute;
+   z-index: 1;
+   bottom: 0;
+   right: 25px;
+   width: 50px;
+   height: 2.5px;
+   background: $blueButton;
+}
+.hambugerMenu-user{
+   margin-top: 8px;
+   text-align: right;
+   ul {
+      width: 100%;
+      list-style: none;
+      padding: 0 8px;
+      box-sizing: border-box;
+   }
+   
+   li {
+      @include display(flex,center,flex-end);
+      padding: 10px 8px;
+      border-radius: 12px;
+      cursor: pointer;
+
+      &:hover {
+         background-color: $backgroundGray2;
+      }
+   }
+
+   img {
+      width: 20px;
+      margin-left: 10px;
+   }
+
+   a {
+      font-size: 15px;
+      text-decoration: none;
+      color: #000;
+   }
+}
+.hambugerMenu-notification{
+      display: none;
+      width: 100%;
+      >ul {
+         list-style: none;
+         overflow-y: scroll;
+         scrollbar-width: none;
+         
+         &::-webkit-scrollbar {
+            display: none;
+         }
+      }
+      
+      li>a {
+         border-bottom: .3px solid $backgroundGray2;
+         padding: 8px;
+         @include display(flex, center, flex-start);
+         text-decoration: none;
+         color: $fontGary;
+         
+         div>div {
+            @include display(flex, flex-start, center);
+            flex-direction: column;
+            margin-bottom: 8px;
+   
+            h5 {
+               font-size: .8rem;
+               color: $black;
+            }
+         }
+      }
+   
+      li {
+         &:hover {
+            background-color: $backgroundGray2;
+         }
+      }
+}
+.hambugerMenu-notification.active{
+   display: block;
+}
+.hambugerMenu-favorite {
+   display: none;
+    width: 100%;
+   >ul {
+      list-style: none;
+      overflow-y: scroll;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+      }
+   }
+
+   li {
+      >a {
+         border-bottom: .3px solid $backgroundGray2;
+         padding: 8px;
+         @include display(flex, center, flex-start);
+         text-decoration: none;
+         color: $fontGary;
+      }
+
+      img {
+         width: 40px;
+         margin-right: 5px;
+      }
+   }
+
+   li {
+      &:hover {
+         background-color: $backgroundGray2;
+
+         a {
+            color: $black;
+         }
+      }
+   }
+}
+.hambugerMenu-favorite.active{
+   display: block;
+}
+//end hambuger menu-----------------------
 
 .navbarMain {
    @include display(flex, center, none);
@@ -398,6 +615,9 @@ header {
 
    .navbar {
       @include display(flex, center, none);
+   }
+   @include media(M){
+    display: none;
    }
 }
 
@@ -412,7 +632,8 @@ header {
    h5 {
       margin-bottom: 5px;
    }
-   h6{
+
+   h6 {
       color: $fontGary;
    }
 }
@@ -727,9 +948,8 @@ header {
 
 .dashboard {
    width: 100%;
-   @include display(grid,center,center);
-   // flex-wrap: wrap;
-   grid-template-columns: repeat(2,1fr);
+   @include display(grid, center, center);
+   grid-template-columns: repeat(2, 1fr);
    place-items: center;
    margin: 0 auto;
    gap: 10px 20px;
@@ -756,10 +976,10 @@ header {
 }
 
 .dashboard-card {
-   @include box(550px, $linearBlueBottom, 4px, $shadowColor, 12px);
-   height: 110px;
+   @include box(calc(100% - 40px), $linearBlueBottom, 4px, $shadowColor, 12px);
    @include display(flex, flex-start, center);
    flex-direction: column;
+   height: 110px;
    padding: 0 15px;
 
    span {
@@ -774,6 +994,7 @@ header {
    position: relative;
    box-shadow: -4px -4px 8px $shadowColor,
       4px 4px 8px $shadowColor;
+   overflow: hidden;
 }
 
 .message-box,
@@ -781,6 +1002,7 @@ header {
    @include display(flex, center, space-between);
    border-bottom: 0.3px solid $hoverList;
    padding: 5px 15px;
+
    img {
       cursor: pointer;
       width: 25px;
@@ -890,6 +1112,7 @@ table {
    flex-direction: column;
    padding: 5px 15px;
    width: calc(100% - 30px);
+
    #direct-show-icon {
       width: 20px;
    }
@@ -1007,10 +1230,12 @@ table {
       width: 25px;
    }
 }
-.pagebtn.disabled{
+
+.pagebtn.disabled {
    background-color: $line;
    color: $hoverList;
 }
+
 #findPage-tables {
    @include box(50%, $backgroundGray2, 1px, $shadowColor, 8px);
    margin: 0 10px;
