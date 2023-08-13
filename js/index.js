@@ -588,24 +588,29 @@ function HambugerMenu() {
 }
 //change hamebuger menu body-------------------------------------
 function changeHambugerMenuBody(key) {
-   const hambugerMenukUser=document.querySelector('.hambugerMenu-user');
-   const hambugerMenukNotification=document.querySelector('.hambugerMenu-notification');
-   const hambugerMenukFavorite=document.querySelector('.hambugerMenu-favorite');
+   const hambugerMenuUser=document.querySelector('.hambugerMenu-user');
+   const hambugerMenuNotification=document.querySelector('.hambugerMenu-notification');
+   const hambugerMenuFavorite=document.querySelector('.hambugerMenu-favorite');
+   const borderBottom=document.querySelector('#borderBottom');
+  
    switch (key) {
       case 1:
-         hambugerMenukUser.style.display="block";
-         hambugerMenukNotification.classList.remove('active');
-         hambugerMenukFavorite.classList.remove('active');
+         hambugerMenuUser.style.display="block";
+         hambugerMenuNotification.classList.remove('active');
+         hambugerMenuFavorite.classList.remove('active');
+         borderBottom.style.right="25px";
          break;
       case 2:
-         hambugerMenukUser.style.display="none";
-         hambugerMenukNotification.classList.add('active');
-         hambugerMenukFavorite.classList.remove('active');
+         hambugerMenuUser.style.display="none";
+         hambugerMenuNotification.classList.add('active');
+         hambugerMenuFavorite.classList.remove('active');
+         borderBottom.style.right="155px";
          break;
       case 3:
-         hambugerMenukUser.style.display="none";
-         hambugerMenukNotification.classList.remove('active');
-         hambugerMenukFavorite.classList.add('active');
+         hambugerMenuUser.style.display="none";
+         hambugerMenuNotification.classList.remove('active');
+         hambugerMenuFavorite.classList.add('active');
+         borderBottom.style.right="90px";
          break;
    }
 }
