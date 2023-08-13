@@ -388,6 +388,144 @@
             </div>
          </div>
 
+         <div class="hambugerMenu-icon" onclick="HambugerMenu()">
+            <img src="./image/icon/hambugerMenu.png">
+         </div>
+
+         <div class="hambugerMenu">
+            <div class="hambugerMenu-header">
+               <img id="close-btn" src="./image/icon/close.png" onclick="HambugerMenu()">
+               <div class="hambugerMenu-profile">
+                  <div>
+                     <h5>Hamed Noroozi</h5>
+                     <h6>Web Developer</h6>
+                  </div>
+                  <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg" alt="user">
+               </div>
+            </div>
+            
+            <div class="hambugerMenu-home-Icon" onclick="openHome()">
+               <img src="./image/icon/home-24.png">
+            </div>
+            <div class="hambugerMenu-navbar">
+               <img src="./image/icon/notification.png" onclick="changeHambugerMenuBody(2)">
+               <img src="./image/icon/starLight.png" onclick="changeHambugerMenuBody(3)">
+               <img src="./image/icon/user.png" onclick="changeHambugerMenuBody(1)">
+            </div>
+
+            <div class="hambugerMenu-user">
+               <ul>
+                  <li>
+                     <a href="#">Personalize</a>
+                     <img src="./image/icon/personalize.png">
+                  </li>
+                  <li>
+                     <a href="#">Messages</a>
+                     <img src="./image/icon/message.png">
+                  </li>
+                  <li>
+                     <a href="./signin.html">Log out</a>
+                     <img src="./image/icon/log-out.png">
+                  </li>
+               </ul>
+            </div>
+
+            <div class="hambugerMenu-favorite">
+               <ul>
+                  <li>
+                     <a href="#">
+                        <img class="favorite-icon" src="./image/icon/list-black.png">
+                        <h4>Disturbution List</h4>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img class="favorite-icon" src="./image/icon/list-black.png">
+                        <h4>History</h4>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img class="favorite-icon" src="./image/icon/list-black.png">
+                        <h4>Schedule</h4>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img class="favorite-icon" src="./image/icon/list-black.png">
+                        <h4>Check</h4>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="hambugerMenu-notification">
+                  <ul>
+                     <li><a href="#">
+                           <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg">
+                           <div>
+                              <div>
+                                 <h5>Hamed Noroozi</h5>
+                                 <h6 class="notifeTime">43 sec ago</h6>
+                              </div>
+                              <h6>OTL Workflows for Employees</h6>
+                           </div>
+                        </a></li>
+                     <li><a href="#">
+                           <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg">
+                           <div>
+                              <div>
+                                 <h5>Mehdi Mehdizadeh</h5>
+                                 <h6 class="notifeTime">2 min ago</h6>
+                              </div>
+                              <h6>OTL Workflows for Employees</h6>
+                           </div>
+                        </a></li>
+                     <li><a href="#">
+                           <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg">
+                           <div>
+                              <div>
+                                 <h5>Mehdi Mehdizadeh</h5>
+                                 <h6 class="notifeTime">5 min ago</h6>
+                              </div>
+                              <h6>OTL Workflows for Employees</h6>
+                           </div>
+                        </a></li>
+                     <li><a href="#">
+                           <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg">
+                           <div>
+                              <div>
+                                 <h5>Mehdi Mehdizadeh</h5>
+                                 <h6 class="notifeTime">10 min ago</h6>
+                              </div>
+                              <h6>OTL Workflows for Employees</h6>
+                           </div>
+                        </a></li>
+                     <li><a href="#">
+                           <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg">
+                           <div>
+                              <div>
+                                 <h5>Mehdi Mehdizadeh</h5>
+                                 <h6 class="notifeTime">15 min ago</h6>
+                              </div>
+                              <h6>OTL Workflows for Employees</h6>
+                           </div>
+                        </a></li>
+                     <li><a href="#">
+                           <img class="profile-photo" src="./image/mubariz-mehdizadeh.jpg">
+                           <div>
+                              <div>
+                                 <h5>Mehdi Mehdizadeh</h5>
+                                 <h6 class="notifeTime">15 min ago</h6>
+                              </div>
+                              <h6>OTL Workflows for Employees</h6>
+                           </div>
+                        </a></li>
+                  </ul>
+            </div>
+
+
+         </div>
       </header>
 
       <main class="main">
@@ -527,7 +665,7 @@
                <div class="findPage">
                   <button class="box-btn2 pagebtn"><img src="./image/icon/double-left.png">Previous</button>
                   <select name="tables" id="findPage-tables">
-                     
+
                   </select>
                   <button class="box-btn2 pagebtn">Next<img src="./image/icon/double-right.png"></button>
                </div>
@@ -1112,357 +1250,357 @@
                   </div>
 
                   <div>
-                      <ul class="reporting-tables">
-                  <li>
-                     <div class="table-titre">
-                        <h3>Pie Chart</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <div class="pieChart-container">
-                        <div>
-                           <canvas id="pieChart"></canvas>
-                        </div>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="table-titre">
-                        <h3>Effort</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator/td>
-                              <td>PID</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Current Budget People Effort</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>People Effort</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>% Spent People Effort</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Forcast People Effort</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Forcast People Effort Variance %</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
+                     <ul class="reporting-tables">
+                        <li>
+                           <div class="table-titre">
+                              <h3>Pie Chart</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <div class="pieChart-container">
+                              <div>
+                                 <canvas id="pieChart"></canvas>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Effort</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator/td>
+                                    <td>PID</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Current Budget People Effort</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>People Effort</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>% Spent People Effort</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Forcast People Effort</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Forcast People Effort Variance %</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
 
-                  <li>
-                     <div class="table-titre">
-                        <h3>Cost</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator</td>
-                              <td>PID</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Original Budget Burdened Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Current Budget Burdened Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Burdened Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Tatal Committed Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Burdened Cost + Committed Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>ETC</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Forecast Burdened Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Forecast Cost Variance %</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Cost</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator</td>
+                                    <td>PID</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Original Budget Burdened Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Current Budget Burdened Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Burdened Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Tatal Committed Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Burdened Cost + Committed Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>ETC</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Forecast Burdened Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Forecast Cost Variance %</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
 
-                  <li>
-                     <div class="table-titre">
-                        <h3>Revenue</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator</td>
-                              <td>PID</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Original Budget Revenue</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Current Budget Revenue</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Accrued Revenue</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Forecast Revenue</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Forecast Revenue Variance</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Revenue</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator</td>
+                                    <td>PID</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Original Budget Revenue</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Current Budget Revenue</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Accrued Revenue</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Forecast Revenue</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Forecast Revenue Variance</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
 
-                  <li>
-                     <div class="table-titre">
-                        <h3>Earned Value</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Planned Value</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Acrual Cost</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Physical % Complete</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Earned Value</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>% Spent</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Earned Value Cost Variance</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Earned Value Schedule Variance</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Schedule Performance Index</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Cost Performance Index</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>To Complete Performance Index</td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Earned Value</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Planned Value</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Acrual Cost</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Physical % Complete</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Earned Value</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>% Spent</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Earned Value Cost Variance</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Earned Value Schedule Variance</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Schedule Performance Index</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Cost Performance Index</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>To Complete Performance Index</td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
 
-                  <li>
-                     <div class="table-titre">
-                        <h3>Billability</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator</td>
-                              <td>PID</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Billable Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Billable Cost % of Tatal Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Nonbillable Cost</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Billable People Effort</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Billable People Effort %</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Nonbillable People Effort</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Next Invoice Date</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
-                  <li>
-                     <div class="table-titre">
-                        <h3>Billing and Collections</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Billed Amount</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Outstanding Receivables</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Past Due Receivables</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Unearned Revenue</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Unbilled Receivables</td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Next Invoice Date</td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Billability</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator</td>
+                                    <td>PID</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Billable Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Billable Cost % of Tatal Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Nonbillable Cost</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Billable People Effort</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Billable People Effort %</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Nonbillable People Effort</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Next Invoice Date</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Billing and Collections</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Billed Amount</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Outstanding Receivables</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Past Due Receivables</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Unearned Revenue</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Unbilled Receivables</td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Next Invoice Date</td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
 
-                  <li>
-                     <div class="table-titre">
-                        <h3>Backlog</h3>
-                        <button class="btn">Export</button>
-                     </div>
-                     <table>
-                        <thead>
-                           <tr>
-                              <td>Indicator</td>
-                              <td>PID</td>
-                              <td>ITD</td>
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr>
-                              <td>Backlog</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Backlog % of Total Funding</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Backlog Days Remaining</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Revenue</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                           <tr>
-                              <td>Revenue at Risk</td>
-                              <td></td>
-                              <td></td>
-                           </tr>
-                        </tbody>
-                     </table>
-                  </li>
-               </ul>
+                        <li>
+                           <div class="table-titre">
+                              <h3>Backlog</h3>
+                              <button class="btn">Export</button>
+                           </div>
+                           <table>
+                              <thead>
+                                 <tr>
+                                    <td>Indicator</td>
+                                    <td>PID</td>
+                                    <td>ITD</td>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>Backlog</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Backlog % of Total Funding</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Backlog Days Remaining</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Revenue</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                                 <tr>
+                                    <td>Revenue at Risk</td>
+                                    <td></td>
+                                    <td></td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </li>
+                     </ul>
                   </div>
-               </div>        
+               </div>
             </div>
 
             <div class="functions-procurement">
