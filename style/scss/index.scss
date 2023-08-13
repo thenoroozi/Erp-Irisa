@@ -481,18 +481,19 @@ header {
       margin: 8px 0;
       cursor: pointer;
    }
+   #borderBottom{
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 25px;
+      width: 50px;
+      height: 2.5px;
+      background: $blueButton;
+   }
 }
-.hambugerMenu-navbar::before{
-   content: '';
-   display: block;
-   position: absolute;
-   z-index: 1;
-   bottom: 0;
-   right: 25px;
-   width: 50px;
-   height: 2.5px;
-   background: $blueButton;
-}
+
 .hambugerMenu-user{
    margin-top: 8px;
    text-align: right;
@@ -529,13 +530,9 @@ header {
       display: none;
       width: 100%;
       >ul {
+         height: 400px;
          list-style: none;
          overflow-y: scroll;
-         scrollbar-width: none;
-         
-         &::-webkit-scrollbar {
-            display: none;
-         }
       }
       
       li>a {
@@ -570,13 +567,9 @@ header {
    display: none;
     width: 100%;
    >ul {
+      height: 400px;
       list-style: none;
       overflow-y: scroll;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-         display: none;
-      }
    }
 
    li {

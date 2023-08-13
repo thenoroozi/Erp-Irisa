@@ -1127,8 +1127,7 @@ header {
   margin: 8px 0;
   cursor: pointer;
 }
-
-.hambugerMenu-navbar::before {
+.hambugerMenu-navbar #borderBottom {
   content: "";
   display: block;
   position: absolute;
@@ -1176,12 +1175,9 @@ header {
   width: 100%;
 }
 .hambugerMenu-notification > ul {
+  height: 400px;
   list-style: none;
   overflow-y: scroll;
-  scrollbar-width: none;
-}
-.hambugerMenu-notification > ul::-webkit-scrollbar {
-  display: none;
 }
 .hambugerMenu-notification li > a {
   border-bottom: 0.3px solid #EFEFEF;
@@ -1216,12 +1212,9 @@ header {
   width: 100%;
 }
 .hambugerMenu-favorite > ul {
+  height: 400px;
   list-style: none;
   overflow-y: scroll;
-  scrollbar-width: none;
-}
-.hambugerMenu-favorite > ul::-webkit-scrollbar {
-  display: none;
 }
 .hambugerMenu-favorite li > a {
   border-bottom: 0.3px solid #EFEFEF;
