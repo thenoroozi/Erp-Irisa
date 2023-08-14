@@ -34,7 +34,7 @@ body {
       color: $white;
       margin-bottom: 10px;
 
-      h4 {
+      h3 {
          display: none;
       }
 
@@ -43,6 +43,7 @@ body {
          cursor: pointer;
          padding: 3px;
          border-radius: 50%;
+         width: 30px;
       }
    }
 
@@ -58,7 +59,7 @@ body {
       .logoName {
          @include display(flex, center, space-around);
 
-         h4 {
+         h3 {
             display: block;
          }
 
@@ -97,12 +98,12 @@ body {
    padding: 5px;
    border-radius: 10px;
 
-   h3 {
+   h4 {
       color: $white;
    }
 
    img {
-      width: 30px;
+      width: 25px;
    }
 
    a {
@@ -159,7 +160,9 @@ body {
          align-items: center;
          padding: 8px;
          border-radius: 8px;
-
+          h4{
+            font-size: 15px;
+          }
          &:hover {
             background-color: $hoverList;
             color: $white;
@@ -170,7 +173,9 @@ body {
          .list-insideTitr-#{$item}-#{$j} {
             display: flex;
             align-items: center;
-
+            h4{
+               font-size: 15px;
+             }
             &:hover {
                color: $white;
             }
@@ -184,12 +189,14 @@ body {
 }
 
 @for $item from 1 through 3 {
+   img{
+      width: 20px;
+   }
    #arrow-left-#{$item} {
       width: 25px;
       margin-left: 5px;
       transition: all .3s ease;
    }
-
    #arrow-left-#{$item}.active {
       transform: rotate(90deg);
    }
@@ -210,7 +217,7 @@ body {
          display: flex;
          align-items: center;
          justify-content: space-between;
-
+          font-size: 1rem;
          &:hover {
             color: $white;
          }
@@ -333,7 +340,7 @@ body {
    .logoName {
       @include display(flex, center, space-around);
 
-      h4 {
+      h3 {
          display: block;
       }
 
