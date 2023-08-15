@@ -1239,6 +1239,17 @@
                      <ul class="reporting-tables">
                         <li>
                            <div class="table-titre">
+                              <h4>Line Chart</h4>
+                              <button class="btn">Export</button>
+                           </div>
+                           <div class="lineChart-container">
+                              <div>
+                                 <canvas id="lineChart"></canvas>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="table-titre">
                               <h4>Pie Chart</h4>
                               <button class="btn">Export</button>
                            </div>
@@ -1710,16 +1721,17 @@
 
 <script src="./js/index.js"></script>
 <script src="./js/dhtmlxgantt.js"></script>
+<!-- gantts -->
 <script type="text/javascript" src="https://cdn.dhtmlx.com/suite/8.0/suite.js?v=8.0.3"></script>
 <script type="text/javascript" src="./js/common/suite_task_editor.js?v=8.0.3"></script>
 <script type="text/javascript" src="./js/common/suite_link_editor.js?v=8.0.3"></script>
 <script type="text/javascript" src="./js/common/suite_calendar_editor.js?v=8.0.3"></script>
 <script type="text/javascript" src="./js/common/suite_resource_editor.js?v=8.0.3"></script>
+<!-- kanban -->
 <script src="./js/data.js"></script>
 <script type="text/javascript" src="./js/kanban.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0-rc.1/Chart.js"></script>
+<!-- pie chart and line chart -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 <script type="text/javascript">
 
@@ -1736,7 +1748,58 @@
    new Toolbar("#toolbar", {
       api: board.api,
    });
+   
+   var pieChart = document.querySelector("#pieChart");
+   var PxValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+   var PyValues = [55, 49, 44, 24, 15];
+   var barColors = [
+     "#b91d47",
+     "#00aba9",
+     "#2b5797",
+     "#e8c3b9",
+     "#1e7145"
+   ];
+   
+   new Chart(pieChart, {
+     type: "pie",
+     data: {
+       labels: PxValues,
+       datasets: [{
+         backgroundColor: barColors,
+         data: PyValues
+       }]
+     },
+     options: {
+       title: {
+         display: true,
+         text: "World Wide Wine Production 2018"
+       }
+     }
+   });
 
+   const linechart=document.querySelector('#lineChart');
+   const LxValues = [50,60,70,80,90,100,110,120,130,140,150];
+   const LyValues = [7,8,8,9,9,9,10,11,14,14,15];
+   
+   new Chart(linechart, {
+    type: "line",
+    data: {
+      labels: LxValues,
+      datasets: [{
+        fill: false,
+        lineTension: 0,
+        backgroundColor: "rgba(0,0,255,1.0)",
+        borderColor: "rgba(0,0,255,0.1)",
+        data: LyValues
+      }]
+    },
+    options: {
+      legend: {display: false},
+      scales: {
+        yAxes: [{ticks: {min: 6, max:16}}],
+      }
+    }
+   });
 </script>
 <script>
    // Gantt configuration
