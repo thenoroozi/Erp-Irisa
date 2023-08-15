@@ -1160,8 +1160,8 @@ table {
 .functions-box {
    @include display(flex, flex-start, space-between);
    flex-direction: column;
-   padding: 5px 15px;
-   width: calc(100% - 30px);
+   padding: 5px 10px;
+   width: calc(100% - 20px);
 
    #direct-show-icon {
       width: 20px;
@@ -1395,6 +1395,7 @@ table {
    margin-bottom: 10px;
    @include media(M){
       flex-direction: column;
+      align-items: flex-start;
    }
    .functions-item-parts-option {
       @include display(flex, center, space-between);
@@ -1438,6 +1439,7 @@ table {
    margin: 10px auto;
    @include media(M){
       flex-direction: column;
+      align-items: flex-start;
    }
    .functions-item-parts-option {
       @include display(flex, center, space-between);
@@ -1747,11 +1749,14 @@ table {
    }
 
    .reporting-tables {
-      @include display(grid, flex-start, space-evenly);
+      @include display(grid, flex-start, none);
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       list-style: none;
       @include media(M){
+         grid-template-columns: repeat(1,1fr);
+      }
+      @include media(L){
          grid-template-columns: repeat(1,1fr);
       }
    }

@@ -1802,8 +1802,8 @@ table td {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  padding: 5px 15px;
-  width: calc(100% - 30px);
+  padding: 5px 10px;
+  width: calc(100% - 20px);
 }
 .functions-box #direct-show-icon {
   width: 20px;
@@ -2097,6 +2097,7 @@ table td {
 @media (max-width: 768px) {
   .functions-item-part-1 {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 .functions-item-part-1 .functions-item-parts-option {
@@ -2146,6 +2147,7 @@ table td {
 @media (max-width: 768px) {
   .functions-item-part-2 {
     flex-direction: column;
+    align-items: flex-start;
   }
 }
 .functions-item-part-2 .functions-item-parts-option {
@@ -2437,12 +2439,17 @@ table td {
 .functions-reporting .reporting-tables {
   display: grid;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: none;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   list-style: none;
 }
 @media (max-width: 768px) {
+  .functions-reporting .reporting-tables {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
   .functions-reporting .reporting-tables {
     grid-template-columns: repeat(1, 1fr);
   }
