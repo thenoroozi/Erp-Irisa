@@ -1393,9 +1393,14 @@ table {
    @include display(flex, center, space-around);
    padding: 8px;
    margin-bottom: 10px;
-
+   @include media(M){
+      flex-direction: column;
+   }
    .functions-item-parts-option {
       @include display(flex, center, space-between);
+      @include media(M){
+         margin: 5px 0;
+      }
    }
 
    select {
@@ -1431,9 +1436,14 @@ table {
    @include display(flex, center, space-between);
    padding: 0px 10px;
    margin: 10px auto;
-
+   @include media(M){
+      flex-direction: column;
+   }
    .functions-item-parts-option {
       @include display(flex, center, space-between);
+      @include media(M){
+         margin: 5px 0;
+      }
    }
 
    select {
@@ -1707,7 +1717,7 @@ table {
    .functions-item-parts-option {
       @include display(flex, center, flex-start);
       margin: 10px;
-
+      
       select {
          padding: 8px 12px;
          border-top-left-radius: 8px;
@@ -1741,9 +1751,14 @@ table {
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       list-style: none;
+      @include media(M){
+         grid-template-columns: repeat(1,1fr);
+      }
    }
 }
-
+.reporting-charts{
+   width: 100%;
+}
 .pieChart-container {
    width: 500px;
    margin: 15px auto;

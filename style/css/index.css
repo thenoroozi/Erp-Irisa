@@ -2094,10 +2094,20 @@ table td {
   padding: 8px;
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .functions-item-part-1 {
+    flex-direction: column;
+  }
+}
 .functions-item-part-1 .functions-item-parts-option {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .functions-item-part-1 .functions-item-parts-option {
+    margin: 5px 0;
+  }
 }
 .functions-item-part-1 select {
   padding: 8px 12px;
@@ -2133,10 +2143,20 @@ table td {
   padding: 0px 10px;
   margin: 10px auto;
 }
+@media (max-width: 768px) {
+  .functions-item-part-2 {
+    flex-direction: column;
+  }
+}
 .functions-item-part-2 .functions-item-parts-option {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .functions-item-part-2 .functions-item-parts-option {
+    margin: 5px 0;
+  }
 }
 .functions-item-part-2 select {
   padding: 8px 12px;
@@ -2421,6 +2441,15 @@ table td {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   list-style: none;
+}
+@media (max-width: 768px) {
+  .functions-reporting .reporting-tables {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.reporting-charts {
+  width: 100%;
 }
 
 .pieChart-container {
