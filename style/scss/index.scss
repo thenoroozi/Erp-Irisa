@@ -160,9 +160,11 @@ body {
          align-items: center;
          padding: 8px;
          border-radius: 8px;
-          h4{
+
+         h4 {
             font-size: 15px;
-          }
+         }
+
          &:hover {
             background-color: $hoverList;
             color: $white;
@@ -173,9 +175,11 @@ body {
          .list-insideTitr-#{$item}-#{$j} {
             display: flex;
             align-items: center;
-            h4{
+
+            h4 {
                font-size: 15px;
-             }
+            }
+
             &:hover {
                color: $white;
             }
@@ -189,14 +193,16 @@ body {
 }
 
 @for $item from 1 through 3 {
-   img{
+   img {
       width: 20px;
    }
+
    #arrow-left-#{$item} {
       width: 25px;
       margin-left: 5px;
       transition: all .3s ease;
    }
+
    #arrow-left-#{$item}.active {
       transform: rotate(90deg);
    }
@@ -217,7 +223,8 @@ body {
          display: flex;
          align-items: center;
          justify-content: space-between;
-          font-size: 1rem;
+         font-size: 1rem;
+
          &:hover {
             color: $white;
          }
@@ -1332,6 +1339,7 @@ table {
    background-color: $darkLight;
    border-radius: 12px 12px 0 0;
    margin-bottom: 10px;
+
    ul {
       @include display(flex, center, center);
       list-style: none;
@@ -1589,7 +1597,7 @@ table {
    li {
       @include display(flex, center, flex-start);
       font-size: 15px;
-       
+
       span {
          margin-left: 15px;
       }
@@ -1737,6 +1745,14 @@ table {
 }
 
 .pieChart-container {
-   width: 400px;
+   width: 500px;
    margin: 15px auto;
+}
+
+.lineChart-container {
+   #lineChart {
+      width: 300px;
+      max-width: 500px;
+      margin: 15px auto;
+   }
 }

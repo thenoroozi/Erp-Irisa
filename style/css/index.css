@@ -2424,7 +2424,13 @@ table td {
 }
 
 .pieChart-container {
-  width: 400px;
+  width: 500px;
+  margin: 15px auto;
+}
+
+.lineChart-container #lineChart {
+  width: 300px;
+  max-width: 500px;
   margin: 15px auto;
 }
 
