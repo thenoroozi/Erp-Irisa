@@ -1,4 +1,3 @@
-// import {Disturbution} from "./data.js";
 const Disturbution = [{
       id: 1,
       project: "یکپارچه‌سازی سیستم کنترل دسترس",
@@ -385,7 +384,6 @@ function openFunctionList(event) {
    })
 }
 
-
 function openFunctionListJs() {
    removeSelect();
 
@@ -557,29 +555,6 @@ function openFunctionItemPage(event) {
          previousPage = document.querySelector(`.${previousPageClass}`);
          break;
    }
-}
-//pie-chart------------------------------------------------------
-window.onload = function () {
-   var ctx = document.getElementById("pieChart").getContext('2d');
-   var myChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-         labels: ["فولاد", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
-         datasets: [{
-            backgroundColor: [
-               "#2ecc71",
-               "#3498db",
-               "#95a5a6",
-               "#9b59b6",
-               "#f1c40f",
-               "#e74c3c",
-               "#34495e"
-            ],
-            borderWidth: [0, 0, 0, 0, 0, 0, 0],
-            data: [12, 19, 3, 17, 28, 24, 7]
-         }]
-      }
-   });
 }
 //open Hambuger Menu---------------------------------------------------
 function HambugerMenu() {
