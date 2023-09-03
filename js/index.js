@@ -288,11 +288,13 @@ function openFunctionList(event) {
    main.style.display = "none";
    functions.style.display = "flex";
    tHeader.innerHTML = "";
-
+   tBody.innerHTML = "";
    let jsonData = ``;
    let currentPage = 1;
    let Keys = [];
-   fetch(`https://jsonplaceholder.typicode.com/${event}/`)
+
+   const url = "https://jsonplaceholder.typicode.com";
+   fetch(`${url}/${event}/`)
       .then(response => response.json())
       .then(response => {
          jsonData = response;
@@ -313,6 +315,7 @@ function openFunctionList(event) {
          updatePaginationButtons();
          updatePaginationSelects();
       })
+
    //table body
    function renderTableData(page) {
       const startIndex = (page - 1) * 10;
@@ -563,29 +566,29 @@ function HambugerMenu() {
 }
 //change hamebuger menu body-------------------------------------
 function changeHambugerMenuBody(key) {
-   const hambugerMenuUser=document.querySelector('.hambugerMenu-user');
-   const hambugerMenuNotification=document.querySelector('.hambugerMenu-notification');
-   const hambugerMenuFavorite=document.querySelector('.hambugerMenu-favorite');
-   const borderBottom=document.querySelector('#borderBottom');
-  
+   const hambugerMenuUser = document.querySelector('.hambugerMenu-user');
+   const hambugerMenuNotification = document.querySelector('.hambugerMenu-notification');
+   const hambugerMenuFavorite = document.querySelector('.hambugerMenu-favorite');
+   const borderBottom = document.querySelector('#borderBottom');
+
    switch (key) {
       case 1:
-         hambugerMenuUser.style.display="block";
+         hambugerMenuUser.style.display = "block";
          hambugerMenuNotification.classList.remove('active');
          hambugerMenuFavorite.classList.remove('active');
-         borderBottom.style.right="25px";
+         borderBottom.style.right = "25px";
          break;
       case 2:
-         hambugerMenuUser.style.display="none";
+         hambugerMenuUser.style.display = "none";
          hambugerMenuNotification.classList.add('active');
          hambugerMenuFavorite.classList.remove('active');
-         borderBottom.style.right="155px";
+         borderBottom.style.right = "155px";
          break;
       case 3:
-         hambugerMenuUser.style.display="none";
+         hambugerMenuUser.style.display = "none";
          hambugerMenuNotification.classList.remove('active');
          hambugerMenuFavorite.classList.add('active');
-         borderBottom.style.right="90px";
+         borderBottom.style.right = "90px";
          break;
    }
 }
